@@ -52,3 +52,21 @@ void interfaz() {
         cout <<endl;
     }
 }
+void mostrarTotalHabitaciones() {
+    int totalHabitaciones = nPisos*nHabitaciones;
+    int habitacionesOcupadas = 0;
+    int habitacionesDisponibles = 0;
+    
+    for (int i=1;i<=nPisos;i++) {
+        for (int j=1;j<=nHabitaciones;j++) {
+            if (ocupados[i][j] == 1) {
+                habitacionesOcupadas++;
+            } else {
+                habitacionesDisponibles++;
+            }
+        }
+    }
+    cout <<"Total de habitaciones: "<<totalHabitaciones<<endl;
+    cout <<"Habitaciones ocupadas: "<<habitacionesOcupadas<<endl;
+    cout <<"Habitaciones disponibles: " <<habitacionesDisponibles<<endl;
+}
