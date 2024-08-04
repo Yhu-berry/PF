@@ -35,9 +35,9 @@ void interfaz() {
         cout <<"Piso "<<i<<"  ";
         for (int j=1;j<=nHabitaciones;j++) {
             if (ocupados[i][j] == 1) {
-                cout<<"H"<<i<<j<<"["<<y<<"]";
+                cout<<"H"<<i<<j<<"["<<y<<"] ";
             } else {
-                cout<<"H"<<i<<j<<"["<<z<<"]";
+                cout<<"H"<<i<<j<<"["<<z<<"] ";
             }
         }
         cout <<endl;
