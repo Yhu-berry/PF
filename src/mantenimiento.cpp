@@ -66,7 +66,7 @@ void iniciar(){
 		}
 	}
 	cout<<"------------------------------------------------------"<<endl<<endl;
-	
+
 	cout<<"======================================================"<<endl<<endl;    
 }
 
@@ -77,5 +77,18 @@ void editar(){
 }
 
 void visualizar(){
-	// visualizar inicio registrado
+	system ("cls");
+	cout<<"===================== VISUALIZAR ====================="
+	
+	// encontrar el numero maximo de habitaciones en cualquier piso
+	int maxHabitaciones=0;
+	for(int i=0; i<nPisos; i++){
+		if(P[i].nHabitaciones>maxHabitaciones)
+			maxHabitaciones=P[i].nHabitaciones;
+	}
+	
+	// imprimir encabezado de cada piso
+	
+	// imprimir la informacion de cada habitacion por piso
+	
 }
