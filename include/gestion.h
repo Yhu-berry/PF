@@ -23,8 +23,12 @@ extern int TotalUsuarios;
 
 //Registrar usuario
 void registrar_usuario(USUARIO& usuario);
+
 //Mostrar habitaciones disponibles (nivel terminal o usando GUI)
-//Reservar Habitaciones
+
+//Reservar Habitaciones (cuando se reserve la habitacion =0, dato que se pasra a panel.cpp)
+void reservarHabitacion();
+
 //Revisiom de la salida (pago)
 //Liberar habitacion
 
