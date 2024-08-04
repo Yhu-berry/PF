@@ -37,3 +37,18 @@ void menuinter() {
     cout <<"\nPresione 0 para volver "; cin >> salir;
     system("cls");
 }
+void interfaz() {
+    system("cls");
+    cout <<"\tHOTEL\n";
+    for (int i=nPisos;i>=1;i--) {
+        cout <<"Piso "<<i<<"  ";
+        for (int j=1;j<=nHabitaciones;j++) {
+            if (ocupados[i][j] == 1) {
+                cout<<"H"<<i<<j<<"["<<y<<"]";
+            } else {
+                cout<<"H"<<i<<j<<"["<<z<<"]";
+            }
+        }
+        cout <<endl;
+    }
+}
