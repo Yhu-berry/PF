@@ -37,3 +37,36 @@ void menuinter() {
     cout <<"\nPresione 0 para volver "; cin >> salir;
     system("cls");
 }
+void interfaz() {
+    system("cls");
+    cout <<"\tHOTEL\n";
+    for (int i=nPisos;i>=1;i--) {
+        cout <<"Piso "<<i<<"  ";
+        for (int j=1;j<=nHabitaciones;j++) {
+            if (ocupados[i][j] == 1) {
+                cout<<"H"<<i<<j<<"["<<y<<"]";
+            } else {
+                cout<<"H"<<i<<j<<"["<<z<<"]";
+            }
+        }
+        cout <<endl;
+    }
+}
+void mostrarTotalHabitaciones() {
+    int totalHabitaciones = nPisos*nHabitaciones;
+    int habitacionesOcupadas = 0;
+    int habitacionesDisponibles = 0;
+    
+    for (int i=1;i<=nPisos;i++) {
+        for (int j=1;j<=nHabitaciones;j++) {
+            if (ocupados[i][j] == 1) {
+                habitacionesOcupadas++;
+            } else {
+                habitacionesDisponibles++;
+            }
+        }
+    }
+    cout <<"Total de habitaciones: "<<totalHabitaciones<<endl;
+    cout <<"Habitaciones ocupadas: "<<habitacionesOcupadas<<endl;
+    cout <<"Habitaciones disponibles: " <<habitacionesDisponibles<<endl;
+}
