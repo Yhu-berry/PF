@@ -16,5 +16,6 @@ extern piso P[20];
 void iniciar();
 void editar();
 void visualizar();
+void mantenimiento();
 
 #endif
