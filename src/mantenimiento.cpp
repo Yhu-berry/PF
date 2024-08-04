@@ -28,10 +28,16 @@ void iniciar(){
 	cout<<endl;
     
 	// mostrar categorias ingresadas
-    
-    // ingresar numero de habitaciones por piso
-    // asignar categoria a cada habitacion
-    // mostrar categorias asignadas a las habitaciones
+	cout<<"------------------------------------------------------"<<endl;
+    cout<<"   CATEGORIAS INGRESADAS: ";
+    for(int i=0; i<nCategorias; i++){
+        cout<<CAT[i]<<" ";
+    }
+    cout<<endl<<"------------------------------------------------------"<<endl<<endl;
+	   
+	// ingresar numero de habitaciones por piso
+	// asignar categoria a cada habitacion
+	// mostrar categorias asignadas a las habitaciones
     
     cout<<"======================================================"<<endl<<endl;    
 }
