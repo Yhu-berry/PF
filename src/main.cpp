@@ -7,7 +7,6 @@
 #include "mantenimiento.h"
 #include "tienda.h"
 #include "reportes.h"
-#include "clientes.h"
 
 using namespace std;
 
@@ -36,7 +35,6 @@ void mostrarInicio(){
         cout << "3.   Mantenimiento" << endl;
         cout << "4.   Tienda" << endl;
         cout << "5.   Reportes" << endl;
-        cout << "6.   Clientes" << endl;
         cout << "0.   Salir" << endl;
         cout << "Seleccione una opcion..." << endl;
 
@@ -55,11 +53,7 @@ void mostrarInicio(){
                 tienda();
             break;
             case 5:
-                reportes();
-            breakl;
-            case 6: 
-                clientes();
-            break;
+                reportes();break;
             case 0:
                 cout << "Saliendo . . . " << endl;
             break;
