@@ -79,5 +79,6 @@ void mostrarInicio(){
 int main (){
     mostrarBienvenida();
     mostrarInicio();
+    despedidad();
     return 0;
 }
