@@ -45,7 +45,7 @@ void iniciar(){
 	
 	// asignar categoria a cada habitacion
 	cout<<endl;
-	cout<<"Asignar categorias a cada habitacion:"<<endl<<endl;
+	cout<<"Asigne categorias a cada habitacion:"<<endl<<endl;
 	for(int i=0; i<nPisos; i++){
 		for(int j=0; j<P[i].nHabitaciones; j++){
 			cout<<"   Piso #"<<i+1<<", Habitacion #"<<j+1<<" : "<<endl;
@@ -56,7 +56,17 @@ void iniciar(){
 	}
     
 	// mostrar categorias asignadas a las habitaciones
-    
+	cout<<"------------------------------------------------------"<<endl;
+	cout<<"Categorias asignadas a cada habitaciones:"<<endl;
+	for(int i=0; i<nPisos; i++){
+		cout<<endl;
+		cout<<" Piso #"<<i+1<<":"<<endl;
+		for(int j=0; j<P[i].nHabitaciones; j++){
+			cout<<"  - Habitacion #"<<j+1<<": "<<P[i].categoriasHabitaciones[j]<<endl;
+		}
+	}
+	cout<<"------------------------------------------------------"<<endl<<endl;
+	
 	cout<<"======================================================"<<endl<<endl;    
 }
 
