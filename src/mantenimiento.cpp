@@ -106,3 +106,35 @@ void visualizar(){
 	cout<<endl;
 	cout<<"======================================================"<<endl<<endl;
 }
+
+void mantenimiento(){
+	int opcion;
+	
+	do{
+		cout<<"=================== MANTENIMIENTO ===================="<<endl;
+		cout<<" 1. Iniciar"<<endl;
+		cout<<" 2. Editar"<<endl;
+		cout<<" 3. Visualizar"<<endl;
+		cout<<" 0. Salir"<<endl;
+		cout<<"======================================================"<<endl;
+		cout<<" Seleccione una opcion: "; cin>>opcion;
+		
+		switch(opcion){
+			case 1:
+				iniciar();
+				break;
+			case 2:
+				editar();
+				break;
+			case 3:
+				visualizar();
+				break;
+			case 0:
+				// salir al menu de main.cpp
+				break;
+			default:
+				cout<<"Opcion no valida"<<endl;
+				break;
+		}
+	} while(opcion!=0);
+}
