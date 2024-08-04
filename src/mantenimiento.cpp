@@ -36,22 +36,33 @@ void iniciar(){
     
 	// mostrar categorias ingresadas
 	cout<<"------------------------------------------------------"<<endl;
-    cout<<"   CATEGORIAS INGRESADAS: ";
-    for(int i=0; i<nCategorias; i++){
-        cout<<CAT[i]<<" ";
-    }
-    cout<<endl<<"------------------------------------------------------"<<endl<<endl;
+	cout<<"   CATEGORIAS INGRESADAS: ";
+	for(int i=0; i<nCategorias; i++){
+		cout<<CAT[i]<<" ";
+	}
+	cout<<endl<<"------------------------------------------------------"<<endl<<endl;
 	   
 	// ingresar numero de habitaciones por piso
-    for(int i=0; i<nPisos; i++){
-        cout<<"Numero de habitaciones en el piso #"<<i+1<<": "; cin>>P[i].nHabitaciones;
-        cin.ignore();
+	for(int i=0; i<nPisos; i++){
+		cout<<"Numero de habitaciones en el piso #"<<i+1<<": "; cin>>P[i].nHabitaciones;
+		cin.ignore();
 	}
 	
 	// asignar categoria a cada habitacion
+	cout<<endl;
+	cout<<"Asignar categorias a cada habitacion:"<<endl<<endl;
+	for(int i=0; i<nPisos; i++){
+		for(int j=0; j<P[i].nHabitaciones; j++){
+			cout<<"   Piso #"<<i+1<<", Habitacion #"<<j+1<<" : "<<endl;
+			cout<<"   - Categoria: "; getline(cin, categoria);
+			P[i].categoriasHabitaciones[j]=categoria;
+			cout<<endl;
+		}
+	}
+    
 	// mostrar categorias asignadas a las habitaciones
     
-    cout<<"======================================================"<<endl<<endl;    
+	cout<<"======================================================"<<endl<<endl;    
 }
 
 void editar(){
