@@ -20,6 +20,18 @@ struct ADMIN {
 
 ADMIN admin;
 
+void despedidad(){
+	
+	system("cls");
+	cout<<"\n\n-----------------------------------------------------"<<endl;
+	cout<<"-----------------------------------------------------"<<endl;
+	
+	cout<<"\tGRACIAS POR USAR EL PROGRAMA!"<<endl;
+	
+	cout<<"-----------------------------------------------------"<<endl;
+	cout<<"-----------------------------------------------------\n\n\n\n";
+	
+}
 void mostrarBienvenida(){
     cout << "* * * BIENVENIDO A LA GESTION DE HOTEL * * *" << endl;
     cout << "Antes de empezar, diganos sus nombres: "; cin >> admin.NombreAdmin;
