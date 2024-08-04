@@ -6,8 +6,6 @@
 using namespace std;
 	
 void panel() {
-    
-    
 	
     for (int i=1;i<=nPisos;i++) {
         for (int j=1;j<=nHabitaciones; j++) {

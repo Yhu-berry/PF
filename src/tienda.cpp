@@ -32,7 +32,7 @@ void mostrarInterfaz(){
     } while (opcionTienda != 0);
 }
 
-void mostraProducto(){
+void mostrarProducto(){
     do {
         int opcionMostrarProducto;
         cout << " ----MOSTRAR PRODUCTO----" << endl;
@@ -56,7 +56,10 @@ void mostraProducto(){
 }
 
 void venderProductos(){
-    
+    cout << " ----VENDER PRODUCTOS---- " << endl;
+    for (int i = 0; i < vector){
+        //mostrar las habitaciones ocupadas y poder seleccionarla
+    }
 }
 
 void anadirProductos(){
