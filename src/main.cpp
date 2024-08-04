@@ -11,9 +11,16 @@
 
 using namespace std;
 
+string nombresEmpleado;
+void mostrarBienvenida(){
+    cout << "* * * BIENVENIDO A LA GESTION DE HOTEL * * *" << endl;
+    cout << "Antes de empezar, diganos sus nombres: "; cin >> nombresEmpleado;
+}
+
 void mostrarInicio(){
+
     do {
-        cout << "bienvenido"
+        cout << " ---- INICIO---- "
         cout << "1.   Panel" << endl;
         cout << "2.   Gestion" << endl;
         cout << "3.   Mantenimiento" << endl;
@@ -54,6 +61,7 @@ void mostrarInicio(){
 }
 
 int main (){
+    mostrarBienvenida();
     mostrarInicio();
     return 0;
 }
