@@ -40,11 +40,14 @@ void reservarHabitacion(){
     for(int i=0; i<TotalUsuarios;i++){
         if(usuarios[i].DNI==DNI){
             if(usuarios[i].num_Habitacion==-1){
-                cout<<"Habitacion reservada con exito";
+                cout<<"Reservacion reservada exitosa";
                 //asignar una habitacion en num_Habitacion esto deberia pasarse a panel.cpp
                 return;
+            }else{
+                cout<<"Usted ya tiene una habitacion reservada";
+                return;
             }
-
         }
     }
+    cout<<"Usuario no encontrado"<<endl;
 }
