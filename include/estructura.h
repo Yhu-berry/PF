@@ -6,27 +6,52 @@
 #include <string>
 #include <vector>
 
-struct Disposicion {
-    int idHabitacion;
-    int piso;
-    std::string categoria;
-};
+using namespace std;
 
+struct Administrador {
+    string nombreAdministrador;
+    string Contrasena;
+    strinf nombreHotel;
+}
+
+//principales
 
 struct Usuario {
-    int idUsuario;
-    std::string nombre;
-    std::string telefono;
-    std::string direccion;
-    int numeroHabitacion; 
+    id = 0;
+    string nombre;
+    string apellido;
+    string correo;
+    string telefono;
+    string direccion;
+    string tipo;
 };
 
-
-struct Producto {
-    int idProducto;
-    std::string nombre;
-    std::string categoria;
-    double precio;
+struct Disposicion {
+    int piso = 0;
+    int numeroHabitacion = 0;
+    string categoria;
+    bool ocupada = false;
 };
+
+struct Tienda {
+    int idProducto = 0;
+    string nombreProducto;
+    float precio = 0.0f;
+    int cantidadDisponible = 0;
+};
+
+//secundarias
+
+struct Categoria {
+    string nombreCategoria;
+    float precioCategoria;
+}
+
+// Declaracion de los vectores globales
+extern vector<Usuario> usuarios;
+extern vector<Disposicion> habitaciones;
+extern vector<Tienda> productos;
+
+// Declaracion de los demas vectores 
 
 #endif 
