@@ -16,16 +16,16 @@ struct USUARIO{
 };
 
 //Variables globales
-USUARIO usuarios[100];
-int TotalUsuarios;
+extern USUARIO usuarios[100];
+extern int TotalUsuarios;
 
 //FUCIONES DE LA LIBRERIA gestion.h
 
 //Registrar usuario
-void registrar_usuario();
+void registrar_usuario(USUARIO& usuario);
 //Mostrar habitaciones disponibles (nivel terminal o usando GUI)
 //Reservar Habitaciones
 //Revisiom de la salida (pago)
 //Liberar habitacion
 
-#endif
+#endif //Fin de Gestion
