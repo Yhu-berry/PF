@@ -2,11 +2,6 @@
 #include <iostream>
 using namespace std;
 
-struct piso{
-	int nHabitaciones;
-	string categoriasHabitaciones[20];	
-};
-
 int nCategorias=0;
 string CAT[20];
 int nPisos=0;
