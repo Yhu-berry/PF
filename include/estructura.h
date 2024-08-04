@@ -34,18 +34,12 @@ struct Disposicion {
 };
 
 struct Tienda {
+    string nombreProducto;
     int idProducto = 0;
     string nombreProducto;
     float precio = 0.0f;
     int cantidadDisponible = 0;
 };
-
-//secundarias
-
-struct Categoria {
-    string nombreCategoria;
-    float precioCategoria;
-}
 
 // Declaracion de los vectores globales
 extern vector<Usuario> usuarios;
