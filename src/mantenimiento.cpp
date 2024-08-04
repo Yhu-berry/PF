@@ -94,5 +94,15 @@ void visualizar(){
 	cout<<endl;
 	
 	// imprimir la informacion de cada habitacion por piso
-	
+	for(int j=0; j<maxHabitaciones; j++){
+		for(int i=0; i<nPisos; i++){
+			if(j<P[i].nHabitaciones)
+				cout<<"#"<<j+1<<" ["<<P[i].categoriasHabitaciones[j]<<"]\t";
+			else
+				cout<<"\t\t";
+		}
+		cout<<endl;
+	}
+	cout<<endl;
+	cout<<"======================================================"<<endl<<endl;
 }
