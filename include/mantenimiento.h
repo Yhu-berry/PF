@@ -10,12 +10,13 @@ struct piso{
 };
 
 extern int nCategorias;
-extern std::string CAT[20];
+extern std::string CATEGORIA[20];
 extern float PRECIO[20];
 extern int nPisos;
-extern piso P[20];
+extern piso PISO[20];
 
 void iniciar();
+void agregarHabitaciones(int pisoIndex);
 void editar();
 void visualizar();
 void mantenimiento();
