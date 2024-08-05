@@ -10,6 +10,7 @@ piso PISO[20];
 
 void iniciar(){
 	string categoria;
+	float precio;
 
 	system("cls");
 	cout<<"======================= INICIO ======================="<<endl<<endl;
@@ -18,7 +19,7 @@ void iniciar(){
 	// ingresar numero de pisos	
 	cout<<" - Numero de pisos: "; cin>>nPisos;
 	
-	// ingresar categorias
+	// ingresar categorias y precios
 	cout<<" - Numero de categorias: "; cin>>nCategorias;
 	cin.ignore();
 	cout<<endl;
@@ -26,8 +27,11 @@ void iniciar(){
 	for(int i=0; i<nCategorias; i++){
 		cout<<"   Categoria #"<<i+1<<": "; getline(cin, categoria);
 		CATEGORIA[i]=categoria;
+		cout<<"   Precio #"<<i+1<<": "; cin>>precio;
+		PRECIO[i]=precio;
+		cin.ignore();
+		cout<<endl;
 	}
-	cout<<endl;
     
 	// mostrar categorias ingresadas
 	cout<<"------------------------------------------------------"<<endl;
