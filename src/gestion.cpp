@@ -106,5 +106,18 @@ void gestion(){
         cout<<"0. Volver al menu principal\n";
         cout<<"Opcion: ";
         cin>>opcion;
-    }
+
+        swich(opcion){
+            case 1:
+                registrar_usuario(usuario);
+                break;
+            case 2:
+                reservarHabitacion();
+                break;
+            case 0:
+                break;
+            default:
+                cout<<"Opcion incorrecta\n";
+        }
+    }while(opcion !=0);
 }
