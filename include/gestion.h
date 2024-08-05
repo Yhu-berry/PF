@@ -5,31 +5,29 @@
 #include <string>
 #include <vector>
 
-using namespace std;
-
 //Registros
 struct USUARIO{
-    string Nombre;
+    std::string Nombre;
     int edad;
     int num_Habitacion;
-    string DNI;
+    std::string DNI;
 };
 
 //Variables globales
-extern USUARIO usuarios[100];
-extern int TotalUsuarios;
+extern std::vector<USUARIO> usuarios;
 
 //FUCIONES DE LA LIBRERIA gestion.h
-
-//Registrar usuario
 void registrar_usuario(USUARIO& usuario);
 
-//Mostrar habitaciones disponibles (nivel terminal o usando GUI)
+void ingresarDatos_usuario(USUARIO& usuario);
 
-//Reservar Habitaciones (cuando se reserve la habitacion =0, dato que se pasra a panel.cpp)
+USUARIO* buscar_usuarioPorDNI(const std::string& DNI);
+
+void mostrarHabitacionesDisponibles(int piso);
+
+void seleccionarHabitacion(int piso);
+
 void reservarHabitacion();
 
-//Revisiom de la salida (pago)
-//Liberar habitacion
-
+//Mostrar las reservas
 #endif //Fin de Gestion
