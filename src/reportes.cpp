@@ -27,8 +27,13 @@ void interfazReportes(){
     } while (opcion != 0); 
 }
 
+//funcion para imprimir los datos del usuario en base a su nombre
 void verHistorial(){
 
+    string nombre;
+    cout << "Ingrese el nombre del usuario cuyo historial desea ver: ";
+    cin.ignore();
+    getline(cin, nombre);
 }
 
 void completarPago(){
