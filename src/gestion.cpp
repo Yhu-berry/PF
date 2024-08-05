@@ -32,20 +32,30 @@ USUARIO* buscar_usuarioPorDNI(const std::string&DNI){
     return nullptr;
 }
 
+
 //Reservar habitacione
 void reservarHabitacion(){
-    string DNI;
+    string DNI; 
     cout<<"Ingrese su DNI: ";
     cin>>DNI;
 
     USUARIO* usuario = buscar_usuarioPorDNI(DNI);
-    if(!usuario){
+    if(!usuario==nullptr){
         cout<<"Usuario no encontrado"<<endl;
     }
                    
     if(usuario->num_Habitacion!=-1){
         cout<<"Usted ya tiene una habitacion reservada"<<endl;
         return;
-    }                
+    }  
+
+    //Mostrar panel
+    int piso;
+    cout<<"piso: ";
+    cin>>piso;
+    if(!(piso>=1 && piso<=nPisos)){
+        cout<<"Piso invalido"<<endl;
+        return;
+    }               
 }
 
