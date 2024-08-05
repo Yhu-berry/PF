@@ -5,7 +5,7 @@
 #include <vector>
 #include "tienda.h"
 
-void mostrarInterfaz() {
+void mostrarInterfaz(){
     Producto menu[MAX_PRODUCTOS];
     int cantidadProductos = 0;
     int opcion;
@@ -21,6 +21,17 @@ void mostrarInterfaz() {
         cout <<"5. Salir\n";
         cout <<"Opcion: "; cin >> opcion;
         cin.ignore();
+          
+        switch (opcion) {
+            case 1: anadirProductos(menu, cantidadProductos); break;
+            case 2: eliminarProductos(menu, cantidadProductos); break;
+            case 3: mostrarProductos(menu, cantidadProductos); cin.get(); break;
+            case 4: venderProductos(menu, cantidadProductos); cin.get(); break;
+            case 5: exit = true; break;
+            default: cout << "Opción no válida. Intente nuevamente.\n"; cin.get();
+        }
+    }
+}
 
 void mostrarProducto(){
 
