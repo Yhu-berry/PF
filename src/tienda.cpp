@@ -33,8 +33,15 @@ void mostrarInterfaz(){
     }
 }
 
-void mostrarProducto(){
-
+void mostrarProductos(Producto menu[], int cantidadProductos){
+    system("cls"); 
+    cout <<"Menú de Cafetería:\n";
+    cout <<"Producto                        Precio\n";
+    cout <<"--------------------------------------\n";
+    for (int i = 0; i < cantidadProductos; i++) {
+        cout << menu[i].nombre;
+        cout <<"                          " << menu[i].precio << '\n';
+    }
 }
 
 void venderProductos(){
