@@ -44,8 +44,26 @@ void mostrarProductos(Producto menu[], int cantidadProductos){
     }
 }
 
-void venderProductos(){
-
+void venderProductos(Producto menu[], int cantidadProductos) {
+    Producto seleccion[MAX_PRODUCTOS];
+    int cantidadSeleccion = 0;
+    string nombre;
+    int cantidad;
+    system("cls");
+    cout <<"Ingrese los productos que desee. Escriba 'FIN' para terminar.\n";
+    
+    while (true) {
+        cout <<"Nombre del producto: ";
+        getline(cin, nombre);
+        if (nombre == "FIN") break;
+        
+        int i;
+        for (i = 0; i < cantidadProductos; i++) {
+            if (menu[i].nombre == nombre) {
+                break;
+            }
+        }
+	}
 }
 
 void anadirProductos(){
