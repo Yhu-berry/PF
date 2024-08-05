@@ -82,14 +82,18 @@ void iniciar(){
 	cout<<"======================================================"<<endl<<endl;    
 }
 
+void agregarHabitaciones(int pisoIndex) {
+}
+
 void editar(){
 	int opcion;
+	int pisoIndex;
 	
 	system("cls");
 	do{
 		cout<<"======================= EDITAR ======================="<<endl;
 		cout<<"1. Agregar piso"<<endl;
-		cout<<"2. Agregar categoria"<<endl;
+		cout<<"2. Agregar habitaciones"<<endl;
 		cout<<"0. Regresar"<<endl;
 		cout<<"======================================================"<<endl;
 		cout<<"Seleccione una opcion: "; cin>>opcion;
@@ -97,11 +101,21 @@ void editar(){
 		
 		switch(opcion){
 			case 1:
-				// agregar piso -> agregar habitaciones
+				// agregar piso -> agregar habitaciones a nuevo piso
+				system("cls");
+				nPisos++;
+				cout<<"PISO #" <<nPisos<<" AGREGADO."<<endl;
+				cout<<"Desea agregar habitaciones ahora? (S/N): ";
+				cin>>agregarAhora;
+				cin.ignore();
+				if(agregarAhora='s'||agregarAhora='S')
+					agregarHabitaciones(nPisos-1);
 				break;
+				
 			case 2:
-				// agregar categoria -> editar categoria de una habitacion
-				break;				
+				// agregar habitaciones
+				break;		
+						
 			case 0:
 				// regresar al menu de mantenimiento
 				break;				
