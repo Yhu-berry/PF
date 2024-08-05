@@ -83,9 +83,33 @@ void iniciar(){
 }
 
 void editar(){
-	// visualizar datos de inicio registrado
-	// agregar pisos -> agregar habitaciones 
-	// agregar categorias -> editar categoria de una habitacion
+	int opcion;
+	
+	system("cls");
+	do{
+		cout<<"======================= EDITAR ======================="<<endl;
+		cout<<"1. Agregar piso"<<endl;
+		cout<<"2. Agregar categoria"<<endl;
+		cout<<"0. Regresar"<<endl;
+		cout<<"======================================================"<<endl;
+		cout<<"Seleccione una opcion: "; cin>>opcion;
+		cin.ignore();
+		
+		switch(opcion){
+			case 1:
+				// agregar piso -> agregar habitaciones
+				break;
+			case 2:
+				// agregar categoria -> editar categoria de una habitacion
+				break;				
+			case 0:
+				// regresar al menu de mantenimiento
+				break;				
+			default:
+				cout<<"Opcion invalida."<<endl;
+				break;
+		}
+	} while(opcion!=0);
 }
 
 void visualizar(){
