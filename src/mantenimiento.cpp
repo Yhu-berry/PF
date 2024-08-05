@@ -84,6 +84,7 @@ void iniciar(){
 
 void agregarHabitaciones(int pisoIndex) {
 	int nNuevasHabitaciones;
+	string categoria;
 	
 	cout<<"Numero de habitaciones nuevas para el piso #"<<pisoIndex+1<<": ";
 	cin>>nNuevasHabitaciones;
@@ -91,6 +92,21 @@ void agregarHabitaciones(int pisoIndex) {
 	
 	int habitacionInicio=PISO[pisoIndex].nHabitaciones;
 	PISO[pisoIndex].nHabitaciones=PISO[pisoIndex].nHabitaciones+nNuevasHabitaciones;
+	
+	cout<<endl;
+	for(int j=habitacionInicio; j<PISO[pisoIndex].nHabitaciones; j++){
+		cout<<"   Habitacion #"<<j+1<<" : "<<endl;
+		cout<<"   - Categoria: "; getline(cin, categoria);
+		PISO[pisoIndex].categoriasHabitaciones[j]=categoria;
+		
+		for(int k=0; k<nCategorias; k++){
+			if(CATEGORIA[k]==categoria){
+				PISO[pisoIndex].preciosHabitaciones[j]=PRECIO[k];
+				break;
+			}
+		}
+		cout<<endl;
+	}
 }
 
 void editar(){
