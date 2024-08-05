@@ -28,8 +28,8 @@ struct Piso {
     string categoriasHabitaciones[20];
 };
 
-struct Tienda {
-    std::string nombre;
+struct Cafeteria {
+    string nombre;
     float precio;
 };
 

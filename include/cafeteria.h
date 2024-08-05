@@ -1,11 +1,11 @@
-// tienda.h 
+// cafeteria.h 
 
-#ifndef TIENDA_H
-#define TIENDA_H
+#ifndef CAFETERIA_H
+#define CAFETERIA_H
 
 #define MAX_PRODUCTOS 100
 
-struct Tienda {
+struct Cafeteria {
     std::string nombre;
     float precio;
 };
