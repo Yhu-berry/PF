@@ -13,7 +13,7 @@ void interfazReportes(){
         cout << "1.   Ver historial" << endl;
         cout << "2.   Completar un pago" << endl;
         cout << "0.   Volver al inicio" << endl;
-        cout << "Seleccione una opcion" <<  endl;
+        cout << "Seleccione una opcion"; cin >> opcion;
 
         switch (opcion){
             case 1: 
