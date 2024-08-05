@@ -44,7 +44,7 @@ void mostrarProductos(Producto menu[], int cantidadProductos){
     }
 }
 
-void venderProductos(Producto menu[], int cantidadProductos) {
+void venderProductos(Producto menu[], int cantidadProductos){
     Producto seleccion[MAX_PRODUCTOS];
     int cantidadSeleccion = 0;
     string nombre;
@@ -104,8 +104,19 @@ void venderProductos(Producto menu[], int cantidadProductos) {
     cout <<"Total: "<< total << '\n';
 }
 
-void anadirProductos(){
-
+void anadirProductos(Producto menu[], int& cantidadProductos){
+    if (cantidadProductos >= MAX_PRODUCTOS) {
+        cout <<"No se pueden agregar más productos. El menú está lleno.\n";
+        return;
+    }
+    
+    Producto nuevoProducto;
+    cout <<"Ingrese el nombre del producto: "; getline(cin, nuevoProducto.nombre);
+    cout <<"Ingrese el precio del producto: "; cin >> nuevoProducto.precio;
+    cin.ignore(); 
+    menu[cantidadProductos] = nuevoProducto;
+    cantidadProductos++;
+    cout <<"Producto agregado con éxito.\n";
 }
 void eliminarProducos(){
 
