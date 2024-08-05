@@ -14,23 +14,18 @@ struct Administrador {
     strinf nombreHotel;
 }
 
-//principales
+//Registros globales principales principales
 
-struct Usuario {
-    id = 0;
-    string nombre;
-    string apellido;
-    string correo;
-    string telefono;
-    string direccion;
-    string tipo;
+struct USUARIO {
+    string Nombre;
+    int edad;
+    int num_Habitacion;
+    string DNI;
 };
 
-struct Disposicion {
-    int piso = 0;
-    int numeroHabitacion = 0;
-    string categoria;
-    bool ocupada = false;
+struct Piso {
+    int nHabitaciones;
+    string categoriasHabitaciones[20];
 };
 
 struct Tienda {
@@ -41,11 +36,16 @@ struct Tienda {
     int cantidadDisponible = 0;
 };
 
-// Declaracion de los vectores globales
-extern vector<Usuario> usuarios;
-extern vector<Disposicion> habitaciones;
-extern vector<Tienda> productos;
+// Declaracion de variables globales 
 
-// Declaracion de los demas vectores 
+extern USUARIO usuarios[100];
+extern int TotalUsuarios = 0;
+extern int nCategorias = 0;
+extern string CAT[20];
+extern int nPisos = 0;
+extern Piso P[20];
+extern int ocupados[100][100] = {0};
+
+
 
 #endif 
