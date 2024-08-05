@@ -55,18 +55,26 @@ void iniciar(){
 			cout<<"   Piso #"<<i+1<<", Habitacion #"<<j+1<<" : "<<endl;
 			cout<<"   - Categoria: "; getline(cin, categoria);
 			PISO[i].categoriasHabitaciones[j]=categoria;
+			
+			// asignar precio basado en la categoria
+			for(int k=0; k<nCategorias; k++){
+				if(CATEGORIA[k]==categoria){
+					PISO[i].preciosHabitaciones[j]=PRECIO[k];
+					break;
+				}
+			}
 			cout<<endl;
 		}
 	}
     
-	// mostrar categorias asignadas a las habitaciones
+	// mostrar categorias y precios asignados a las habitaciones
 	cout<<"------------------------------------------------------"<<endl;
 	cout<<"Categorias asignadas a cada habitaciones:"<<endl;
 	for(int i=0; i<nPisos; i++){
 		cout<<endl;
 		cout<<"   Piso #"<<i+1<<":"<<endl;
 		for(int j=0; j<PISO[i].nHabitaciones; j++){
-			cout<<"   - Habitacion #"<<j+1<<": "<<PISO[i].categoriasHabitaciones[j]<<endl;
+			cout<<"   - Habitacion #"<<j+1<<": "<<PISO[i].categoriasHabitaciones[j]<<" - S/ "<<PISO[i].preciosHabitaciones[j]<<endl;
 		}
 	}
 	cout<<"------------------------------------------------------"<<endl<<endl;
