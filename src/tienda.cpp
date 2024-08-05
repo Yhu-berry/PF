@@ -124,9 +124,19 @@ void eliminarProductos(Producto menu[], int& cantidadProductos){
     getline(cin, nombre);
     
     int i;
-    for (i = 0; i < cantidadProductos; i++) {
+    for (i =0;i<cantidadProductos;i++) {
         if (menu[i].nombre == nombre) {
             break;
         }
+    }
+    
+    if (i < cantidadProductos) {
+        for (int j=i;j<cantidadProductos-1;j++) {
+            menu[j] = menu[j + 1];
+        }
+        cantidadProductos--;
+        cout <<"Producto eliminado con éxito.\n";
+    } else {
+        cout <<"Producto no encontrado.\n";
     }
 }
