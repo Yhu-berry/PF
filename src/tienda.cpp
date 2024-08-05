@@ -75,7 +75,33 @@ void venderProductos(Producto menu[], int cantidadProductos) {
             cout <<"Producto no encontrado.\n";
         }
     }
-	
+    if (cantidadSeleccion == 0) {
+        cout <<"No se ha seleccionado ningún producto.\n";
+        return;
+    }
+    
+    float total = 0;
+    cout <<"Factura:\n";
+    cout <<"Producto                        Cantidad  Subtotal\n";
+    cout <<"----------------------------------------------\n";
+    
+    for (int i = 0; i < cantidadProductos; i++) {
+        int cantidadProducto = 0;
+        for (int j = 0; j < cantidadSeleccion; j++) {
+            if (seleccion[j].nombre == menu[i].nombre) {
+                cantidadProducto++;
+            }
+        }
+        if (cantidadProducto > 0) {
+            float subtotal = cantidadProducto * menu[i].precio;
+            total += subtotal;
+            cout << menu[i].nombre;
+            cout <<"                          "<< cantidadProducto <<"      "<< subtotal << '\n';
+        }
+    }
+    
+    cout <<"----------------------------------------------\n";
+    cout <<"Total: "<< total << '\n';
 }
 
 void anadirProductos(){
