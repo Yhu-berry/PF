@@ -96,3 +96,15 @@ void reservarHabitacion(){
     cout<<"Habitacion reservada con exito\t"<<"H"<<piso<<num_Habitacion<<endl;
 }
 
+void gestion(){
+    int opcion;
+    do{
+        system("cls");
+        cout<<"\t\t\tGESTION\t\t\t"<<endl;
+        cout<<"1. Registrar usuario\n";
+        cout<<"2. Reservar habitacion\n";
+        cout<<"0. Volver al menu principal\n";
+        cout<<"Opcion: ";
+        cin>>opcion;
+    }
+}
