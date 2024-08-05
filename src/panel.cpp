@@ -16,19 +16,24 @@ void menuinter() {
     system("cls");
 }
 
-void mostrar_panel() {
-    for (int i = nPisos; i >= 1; i--) {
-        cout << "Piso " << i << "  ";
-        for (int j = 1; j <= P[i - 1].nHabitaciones; j++) {
-            if (ocupados[i][j] == 1) {
-                cout << "H" << i << j << "[1] ";
+void mostrarPanel() {
+    system("cls");
+    for (int i=pisos.size();i>0;i--) {
+        cout <<"Piso #"<<i<< "  ";
+        for (int j=0;j<pisos[i-1].nHabitaciones;j++) {
+            if (ocupados[i-1][j] == 1) {
+                cout <<"H-"<<i<<j+1<<"[1] ";
             } else {
-                cout << "H" << i << j << "[0] ";
+                cout <<"H-"<<i<<j+1<<"[0] ";
             }
         }
-        cout << endl;
+        cout <<endl;
     }
+    cout <<"Presione Enter para continuar...";
+    cin.ignore();
+    cin.get();
 }
+
 
 
 void mostrarTotalHabitaciones() {
