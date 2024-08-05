@@ -118,7 +118,7 @@ void editar(){
 	do{
 		cout<<"======================= EDITAR ======================="<<endl;
 		cout<<"1. Agregar piso"<<endl;
-		cout<<"2. Agregar habitaciones"<<endl;
+		cout<<"2. Agregar habitacion"<<endl;
 		cout<<"0. Regresar"<<endl;
 		cout<<"======================================================"<<endl;
 		cout<<"Seleccione una opcion: "; cin>>opcion;
@@ -129,6 +129,7 @@ void editar(){
 				// agregar piso -> agregar habitaciones a nuevo piso
 				system("cls");
 				nPisos++;
+				cout<<"==================== AGREGAR PISO ===================="<<endl;
 				cout<<"PISO #" <<nPisos<<" AGREGADO."<<endl;
 				cout<<"Desea agregar habitaciones ahora? (S/N): ";
 				cin>>agregarAhora;
