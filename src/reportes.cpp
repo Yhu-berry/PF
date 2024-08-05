@@ -61,6 +61,11 @@ void verHistorial(){
     }
 }
 
+//se empieza por buscar de nuevo su nombre 
 void completarPago(){
+    string nombre;
+    cout << "Ingrese el nombre del usuario para completar el pago: ";
+    cin.ignore();
+    getline(cin, nombre);
 
 }
