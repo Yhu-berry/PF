@@ -28,7 +28,7 @@ struct Piso {
     string categoriasHabitaciones[20];
 };
 
-struct Cafeteria {
+struct Producto {
     string nombre;
     float precio;
 };

@@ -5,9 +5,12 @@
 #include <vector>
 #include "cafeteria.h"
 
+using namespace std;
+
+Producto menu[MAX_PRODUCTOS];
+int cantidadProductos = 0;
+
 void mostrarInterfaz(){
-    Producto menu[MAX_PRODUCTOS];
-    int cantidadProductos = 0;
     int opcion;
     bool exit = false;
     
@@ -23,17 +26,23 @@ void mostrarInterfaz(){
         cin.ignore();
           
         switch (opcion) {
-            case 1: anadirProductos(menu, cantidadProductos); break;
-            case 2: eliminarProductos(menu, cantidadProductos); break;
-            case 3: mostrarProductos(menu, cantidadProductos); cin.get(); break;
-            case 4: venderProductos(menu, cantidadProductos); cin.get(); break;
-            case 5: exit = true; break;
-            default: cout << "Opción no válida. Intente nuevamente.\n"; cin.get();
+            case 1: anadirProductos(); 
+                break;
+            case 2: eliminarProductos(); 
+                break;
+            case 3: mostrarProductos(); cin.get(); 
+                break;
+            case 4: venderProductos(); cin.get(); 
+                break;
+            case 5: exit = true; 
+                break;
+            default: cout << "Opción no válida. Intente nuevamente.\n";
+            cin.get();
         }
     }
 }
 
-void mostrarProductos(Producto menu[], int cantidadProductos){
+void mostrarProductos(){
     system("cls"); 
     cout <<"Menú de Cafetería:\n";
     cout <<"Producto                        Precio\n";
@@ -44,7 +53,7 @@ void mostrarProductos(Producto menu[], int cantidadProductos){
     }
 }
 
-void venderProductos(Producto menu[], int cantidadProductos){
+void venderProductos(){
     Producto seleccion[MAX_PRODUCTOS];
     int cantidadSeleccion = 0;
     string nombre;
@@ -104,21 +113,24 @@ void venderProductos(Producto menu[], int cantidadProductos){
     cout <<"Total: "<< total << '\n';
 }
 
-void anadirProductos(Producto menu[], int& cantidadProductos){
+void anadirProductos(){
     if (cantidadProductos >= MAX_PRODUCTOS) {
         cout <<"No se pueden agregar más productos. El menú está lleno.\n";
         return;
     }
     
     Producto nuevoProducto;
-    cout <<"Ingrese el nombre del producto: "; getline(cin, nuevoProducto.nombre);
-    cout <<"Ingrese el precio del producto: "; cin >> nuevoProducto.precio;
+    cout <<"Ingrese el nombre del producto: ";
+    getline(cin, nuevoProducto.nombre);
+    cout <<"Ingrese el precio del producto: ";
+    cin >> nuevoProducto.precio;
     cin.ignore(); 
     menu[cantidadProductos] = nuevoProducto;
     cantidadProductos++;
     cout <<"Producto agregado con éxito.\n";
 }
-void eliminarProductos(Producto menu[], int& cantidadProductos){
+
+void eliminarProductos(){
     string nombre;
     cout <<"Ingrese el nombre del producto a eliminar: ";
     getline(cin, nombre);
