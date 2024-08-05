@@ -112,6 +112,7 @@ void agregarHabitaciones(int pisoIndex) {
 void editar(){
 	int opcion;
 	int pisoIndex;
+	char agregarAhora;
 	
 	system("cls");
 	do{
@@ -138,6 +139,16 @@ void editar(){
 				
 			case 2:
 				// agregar habitaciones a un piso existente
+				system("cls");
+				cout<<"================= AGREGAR HABITACION ================="<<endl;
+				cout<<"Ingrese el piso (1-"<<nPisos<<"): ";
+				cin >> pisoIndex;
+				cin.ignore();
+				if(pisoIndex>=1 && pisoIndex<=nPisos){
+					agregarHabitaciones(pisoIndex-1); 	
+				} else{
+					cout<<"Numero de piso invalido."<<endl<<endl;
+				}
 				break;		
 						
 			case 0:
@@ -186,6 +197,7 @@ void visualizar(){
 void mantenimiento(){
 	int opcion;
 	
+	system("cls");
 	do{
 		cout<<"=================== MANTENIMIENTO ===================="<<endl;
 		cout<<" 1. Iniciar"<<endl;
@@ -207,6 +219,7 @@ void mantenimiento(){
 				break;
 			case 0:
 				// salir al menu de main.cpp
+				system("cls");
 				break;
 			default:
 				cout<<"Opcion no valida"<<endl;
