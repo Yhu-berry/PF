@@ -36,6 +36,25 @@ USUARIO* buscar_usuarioPorDNI(const std::string&DNI){
     return nullptr;
 }
 
+void seleccionarHabitacion(int piso){
+    cout<<"Habitaciones disponibles en el piso"<< piso <<":\n"
+    for(int j=0;j<piso[piso-1].nHabitaciones;j++){
+        cout<<"Habitacion #"<< (j+1)<< "";
+    }
+    cout<<endl;
+
+    int num_Habitacion;
+    cout<<"Ingrese el numero de la habitacion: ";
+    cin>>num_Habitacion;
+
+//si es mayor que el numero de habitaciones
+    if(num_Habitacion1 || num_Habitacion>piso[piso-1].nHabitaciones){
+        cout<<"Habitacion invalida"<<endl;
+        return;
+    }
+
+    //ocupar habitacion 
+}
 //Reservar habitacione
 void reservarHabitacion(){
     string DNI; 
@@ -53,6 +72,7 @@ void reservarHabitacion(){
     }  
 
     //Mostrar panel
+
     int piso;
     cout<<"piso: ";
     cin>>piso;
@@ -61,14 +81,10 @@ void reservarHabitacion(){
         return;
     }   
 
-    //seleccionarHabitacion   
+    seleccionarHabitacion(piso);
 
     int num_Habitacion;
-    cout<< "Numero de la habitacion: ";
-    cin>>num_Habitacion;
 
-    //seleccionarHabitacion{piso};
-    int num_Habitacion;
     cout<<"ingrese el numero de la habitacion: ";
     cin>>num_Habitacion;
     usuario->num_Habitacion=piso*100+num_Habitacion;
