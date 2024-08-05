@@ -11,11 +11,6 @@ int TotalUsuarios=0;
 
 //Codigo de las funciones 
 void registrar_usuario(USUARIO& usuario){
-    if(TotalUsuarios>=100){
-        cout<<"Error";
-        return;
-    }
-
     cout<<"Nombre: ";
     cin.ignore();
     getline(cin,usuario.Nombre); //Desde la entrada va a leer el nombre completo
@@ -24,12 +19,18 @@ void registrar_usuario(USUARIO& usuario){
     getline(cin,usuario.DNI);
     cout<<"Edad: ";
     cin>>usuario.edad;
-
     usuario.num_Habitacion=-1;
-    usuarios[TotalUsuarios++]= usuario;
 }
 
-//Mostrar habitaciones disponibles del panel.h
+//Buscar al usuario por el DNI
+USUARIO* buscar_usuarioPorDNI(const std::string&DNI){
+    for(int i=0; i<TotalUsuarios;i++){
+        if(usuarios[i].DNI==DNI){
+            return &usuarios[i];
+        }
+    }
+    return nullptr;
+}
 
 //Reservar habitacione
 void reservarHabitacion(){
@@ -37,25 +38,14 @@ void reservarHabitacion(){
     cout<<"Ingrese su DNI: ";
     cin>>DNI;
 
-    for(int i=0; i<TotalUsuarios;i++){
-        if(usuarios[i].DNI==DNI){
-            if(usuarios[i].num_Habitacion==-1){
-                int piso,habitacion;
-                cout<<"Ingrese el piso: ";
-                cin>>piso;
-                cout<<"Ingrese la habitacion: ";
-                cin>>habitacion;
-                if(ocupados[piso][habitacion]== 0){
-                    ocupados[piso][habitacion]=1;
-                    usuarios[i].num_Habitacion=habitacion;
-                } else {
-                    cout<<"Habitacion ocupada"<<endl;
-                }
-                return;
-            } else{
-                cout<<"Usted ya tiene una habitacion reservada"<<endl;
-                return;
-            }
-        }
+    USUARIO* usuario = buscar_usuarioPorDNI(DNI);
+    if(!usuario){
+        cout<<"Usuario no encontrado"<<endl;
     }
+                   
+    if(usuario->num_Habitacion!=-1){
+        cout<<"Usted ya tiene una habitacion reservada"<<endl;
+        return;
+    }                
 }
+
