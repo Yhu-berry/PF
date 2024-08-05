@@ -26,7 +26,7 @@ void registrar_usuario(USUARIO& usuario){
     cin>>usuario.edad;
 
     usuario.num_Habitacion=-1;
-    TotalUsuarios++;
+    usuarios[TotalUsuarios++]= usuario;
 }
 
 //Mostrar habitaciones disponibles del panel.h
@@ -40,14 +40,22 @@ void reservarHabitacion(){
     for(int i=0; i<TotalUsuarios;i++){
         if(usuarios[i].DNI==DNI){
             if(usuarios[i].num_Habitacion==-1){
-                cout<<"Reservacion reservada exitosa";
-                //asignar una habitacion en num_Habitacion esto deberia pasarse a panel.cpp
+                int piso,habitacion;
+                cout<<"Ingrese el piso: ";
+                cin>>piso;
+                cout<<"Ingrese la habitacion: ";
+                cin>>habitacion;
+                if(ocupados[piso][habitacion]== 0){
+                    ocupados[piso][habitacion]=1;
+                    usuarios[i].num_Habitacion=habitacion;
+                } else {
+                    cout<<"Habitacion ocupada"<<endl;
+                }
                 return;
-            }else{
-                cout<<"Usted ya tiene una habitacion reservada";
+            } else{
+                cout<<"Usted ya tiene una habitacion reservada"<<endl;
                 return;
             }
         }
     }
-    cout<<"Usuario no encontrado"<<endl;
 }
