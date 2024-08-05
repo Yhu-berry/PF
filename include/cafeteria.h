@@ -3,6 +3,8 @@
 #ifndef CAFETERIA_H
 #define CAFETERIA_H
 
+#include <string>
+
 #define MAX_PRODUCTOS 100
 
 struct Producto {
