@@ -8,19 +8,7 @@ using namespace std;
 void menuinter() {
     switch(op) {
         case 1: interfaz(); break;
-        case 2: {
-            system("cls");
-            cout <<"Que piso y habitacion le gustaria reservar?\n";
-            cout <<"Piso: "; cin>>po;
-            cout <<"Habitacion: "; cin>>ho;
-            if (po>0 && po<=nPisos && ho>0 && ho<=nHabitaciones && ocupados[po][ho] == 0) {
-                ocupados[po][ho] = 1;
-            } else {
-                cout <<"No esta disponible esa habitacion\n";
-            }
-            break;
-        }
-        case 3: mostrarTotalHabitaciones(); break;
+        case 2: mostrarTotalHabitaciones(); break;
         default:
             cout <<"Porfavor digite una opcion correcta";
     }
@@ -28,19 +16,24 @@ void menuinter() {
     system("cls");
 }
 
-void mostrar_panel() {
-    for (int i = nPisos; i >= 1; i--) {
-        cout << "Piso " << i << "  ";
-        for (int j = 1; j <= P[i - 1].nHabitaciones; j++) {
-            if (ocupados[i][j] == 1) {
-                cout << "H" << i << j << "[1] ";
+void mostrarPanel() {
+    system("cls");
+    for (int i=pisos.size();i>0;i--) {
+        cout <<"Piso #"<<i<< "  ";
+        for (int j=0;j<pisos[i-1].nHabitaciones;j++) {
+            if (ocupados[i-1][j] == 1) {
+                cout <<"H-"<<i<<j+1<<"[1] ";
             } else {
-                cout << "H" << i << j << "[0] ";
+                cout <<"H-"<<i<<j+1<<"[0] ";
             }
         }
-        cout << endl;
+        cout <<endl;
     }
+    cout <<"Presione Enter para continuar...";
+    cin.ignore();
+    cin.get();
 }
+
 
 
 void mostrarTotalHabitaciones() {
@@ -70,4 +63,14 @@ void menu() {
     while (salir == 0) {
         menu();
     }
+}
+void comprobarocupad{
+	system("cls");
+            if (po>0 && po<=nPisos && ho>0 && ho<=nHabitaciones && ocupados[po][ho] == 0) {
+                ocupados[po][ho] = 1;
+            } else {
+                cout <<"No esta disponible esa habitacion\n";
+            }
+            break;
+        }
 }
