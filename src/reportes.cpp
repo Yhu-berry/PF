@@ -34,6 +34,31 @@ void verHistorial(){
     cout << "Ingrese el nombre del usuario cuyo historial desea ver: ";
     cin.ignore();
     getline(cin, nombre);
+
+    bool encontrado = false;
+    for (int i = 0; i < numUsuarios; ++i) {
+        if (usuarios[i].nombre == nombre) {
+            encontrado = true;
+            // Se va a mostrar la información del usuario
+            cout << "Nombre: " << usuarios[i].nombre << endl;
+            cout << "DNI: " << usuarios[i].dni << endl;
+            cout << "Habitacion: " << usuarios[i].habitacion << endl;
+            cout << "Deuda actual: $" << usuarios[i].deuda << endl;
+            
+            // Se mostrara la información del piso
+            for (int j = 0; j < numPisos; ++j) {
+                if (pisos[j].numero == usuarios[i].habitacion) {
+                    cout << "Categoría del piso: " << pisos[j].categoria << endl;
+                    break;
+                }
+            }
+            break;
+        }
+    }
+    
+    if (!encontrado) {
+        cout << "Usuario no encontrado." << endl;
+    }
 }
 
 void completarPago(){
