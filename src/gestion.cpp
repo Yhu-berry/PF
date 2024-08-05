@@ -6,11 +6,10 @@
 using namespace std;
 
 //Variables globales
-USUARIO usuarios[100];
-int TotalUsuarios=0;
+vector<USUARIO> usuarios;
 
 //Codigo de las funciones 
-void registrar_usuario(USUARIO& usuario){
+void ingresarDatos_usuario(USUARIO& usuario){
     cout<<"Nombre: ";
     cin.ignore();
     getline(cin,usuario.Nombre); //Desde la entrada va a leer el nombre completo
@@ -22,6 +21,11 @@ void registrar_usuario(USUARIO& usuario){
     usuario.num_Habitacion=-1;
 }
 
+void registar_usuario(USUARIO& usuario){
+    ingresarDatos_usuario(usuario);
+    usuarios.push_back(usuario);
+}
+
 //Buscar al usuario por el DNI
 USUARIO* buscar_usuarioPorDNI(const std::string&DNI){
     for(int i=0; i<TotalUsuarios;i++){
@@ -31,7 +35,6 @@ USUARIO* buscar_usuarioPorDNI(const std::string&DNI){
     }
     return nullptr;
 }
-
 
 //Reservar habitacione
 void reservarHabitacion(){
