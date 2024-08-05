@@ -56,6 +56,19 @@ void reservarHabitacion(){
     if(!(piso>=1 && piso<=nPisos)){
         cout<<"Piso invalido"<<endl;
         return;
-    }               
+    }   
+
+    //seleccionarHabitacion   
+
+    int num_Habitacion;
+    cout<< "Numero de la habitacion: ";
+    cin>>num_Habitacion;
+
+    //seleccionarHabitacion{piso};
+    int num_Habitacion;
+    cout<<"ingrese el numero de la habitacion: ";
+    cin>>num_Habitacion;
+    usuario->num_Habitacion=piso*100+num_Habitacion;
+    cout<<"Habitacion reservada con exito\t"<<"H"<<piso<<num_Habitacion<<endl;
 }
 
