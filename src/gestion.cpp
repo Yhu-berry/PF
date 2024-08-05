@@ -1,7 +1,10 @@
 //gestion.cpp 
 #include "gestion.h"
+#include "mantenimiento.h"  // nHabitaciones le pertenece a esta libreria
+#include "panel.h" //mostrarPanel()
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -47,13 +50,14 @@ void seleccionarHabitacion(int piso){
     cout<<"Ingrese el numero de la habitacion: ";
     cin>>num_Habitacion;
 
-//si es mayor que el numero de habitaciones
-    if(num_Habitacion1 || num_Habitacion>piso[piso-1].nHabitaciones){
+//si es mayor que el numero de habitaciones y ocupar dicho valor en el vector
+    if(!(num_Habitacion1>= 1 && num_Habitacion <= PISO[piso-1].nHabitaciones || ocupados[piso-1][num_Habitacion-1]==1)){
         cout<<"Habitacion invalida"<<endl;
         return;
     }
 
-    //ocupar habitacion 
+    //ocupar habitacion
+    ocupados[piso-1][num_Habitacion-1]=1;
 }
 //Reservar habitacione
 void reservarHabitacion(){
@@ -62,6 +66,7 @@ void reservarHabitacion(){
     cin>>DNI;
 
     USUARIO* usuario = buscar_usuarioPorDNI(DNI);
+
     if(!usuario==nullptr){
         cout<<"Usuario no encontrado"<<endl;
     }
@@ -70,8 +75,8 @@ void reservarHabitacion(){
         cout<<"Usted ya tiene una habitacion reservada"<<endl;
         return;
     }  
-
-    //Mostrar panel
+//funcion de panel.h
+    mostrarPanel();
 
     int piso;
     cout<<"piso: ";
