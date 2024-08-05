@@ -3,10 +3,10 @@
 using namespace std;
 
 int nCategorias=0;
-string CAT[20];
+string CATEGORIA[20];
+float PRECIO[20];
 int nPisos=0;
-
-piso P[20];
+piso PISO[20];
 
 void iniciar(){
 	string categoria;
@@ -25,7 +25,7 @@ void iniciar(){
 	
 	for(int i=0; i<nCategorias; i++){
 		cout<<"   Categoria #"<<i+1<<": "; getline(cin, categoria);
-		CAT[i]=categoria;
+		CATEGORIA[i]=categoria;
 	}
 	cout<<endl;
     
@@ -33,13 +33,13 @@ void iniciar(){
 	cout<<"------------------------------------------------------"<<endl;
 	cout<<"   CATEGORIAS INGRESADAS: ";
 	for(int i=0; i<nCategorias; i++){
-		cout<<CAT[i]<<" ";
+		cout<<CATEGORIA[i]<<" ";
 	}
 	cout<<endl<<"------------------------------------------------------"<<endl<<endl;
 	   
 	// ingresar numero de habitaciones por piso
 	for(int i=0; i<nPisos; i++){
-		cout<<"Numero de habitaciones en el piso #"<<i+1<<": "; cin>>P[i].nHabitaciones;
+		cout<<"Numero de habitaciones en el piso #"<<i+1<<": "; cin>>PISO[i].nHabitaciones;
 		cin.ignore();
 	}
 	
@@ -47,10 +47,10 @@ void iniciar(){
 	cout<<endl;
 	cout<<"Asigne categorias a cada habitacion:"<<endl<<endl;
 	for(int i=0; i<nPisos; i++){
-		for(int j=0; j<P[i].nHabitaciones; j++){
+		for(int j=0; j<PISO[i].nHabitaciones; j++){
 			cout<<"   Piso #"<<i+1<<", Habitacion #"<<j+1<<" : "<<endl;
 			cout<<"   - Categoria: "; getline(cin, categoria);
-			P[i].categoriasHabitaciones[j]=categoria;
+			PISO[i].categoriasHabitaciones[j]=categoria;
 			cout<<endl;
 		}
 	}
@@ -61,8 +61,8 @@ void iniciar(){
 	for(int i=0; i<nPisos; i++){
 		cout<<endl;
 		cout<<"   Piso #"<<i+1<<":"<<endl;
-		for(int j=0; j<P[i].nHabitaciones; j++){
-			cout<<"   - Habitacion #"<<j+1<<": "<<P[i].categoriasHabitaciones[j]<<endl;
+		for(int j=0; j<PISO[i].nHabitaciones; j++){
+			cout<<"   - Habitacion #"<<j+1<<": "<<PISO[i].categoriasHabitaciones[j]<<endl;
 		}
 	}
 	cout<<"------------------------------------------------------"<<endl<<endl;
@@ -83,8 +83,8 @@ void visualizar(){
 	// encontrar el numero maximo de habitaciones en cualquier piso
 	int maxHabitaciones=0;
 	for(int i=0; i<nPisos; i++){
-		if(P[i].nHabitaciones>maxHabitaciones)
-			maxHabitaciones=P[i].nHabitaciones;
+		if(PISO[i].nHabitaciones>maxHabitaciones)
+			maxHabitaciones=PISO[i].nHabitaciones;
 	}
 	
 	// imprimir encabezado de cada piso
@@ -96,8 +96,8 @@ void visualizar(){
 	// imprimir la informacion de cada habitacion por piso
 	for(int j=0; j<maxHabitaciones; j++){
 		for(int i=0; i<nPisos; i++){
-			if(j<P[i].nHabitaciones)
-				cout<<"#"<<j+1<<" ["<<P[i].categoriasHabitaciones[j]<<"]\t";
+			if(j<PISO[i].nHabitaciones)
+				cout<<"#"<<j+1<<" ["<<PISO[i].categoriasHabitaciones[j]<<"]\t";
 			else
 				cout<<"\t\t";
 		}
