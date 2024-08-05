@@ -13,7 +13,7 @@ void interfazReportes(){
         cout << "1.   Ver historial" << endl;
         cout << "2.   Completar un pago" << endl;
         cout << "0.   Volver al inicio" << endl;
-        cout << "Seleccione una opcion" <<  endl;
+        cout << "Seleccione una opcion"; cin >> opcion;
 
         switch (opcion){
             case 1: 
@@ -27,8 +27,13 @@ void interfazReportes(){
     } while (opcion != 0); 
 }
 
+//funcion para imprimir los datos del usuario en base a su nombre
 void verHistorial(){
 
+    string nombre;
+    cout << "Ingrese el nombre del usuario cuyo historial desea ver: ";
+    cin.ignore();
+    getline(cin, nombre);
 }
 
 void completarPago(){
