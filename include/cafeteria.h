@@ -5,7 +5,7 @@
 
 #define MAX_PRODUCTOS 100
 
-struct Cafeteria {
+struct Producto {
     std::string nombre;
     float precio;
 };
