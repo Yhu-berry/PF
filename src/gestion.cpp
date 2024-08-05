@@ -10,6 +10,8 @@ using namespace std;
 
 //Variables globales
 vector<USUARIO> usuarios;
+
+//Usa arreglos de mantenimiento.h
 void visualizarCategorias(){
     cout<<"=============VISUALIZAR=============="<<endl;
     for(int i=0; i<nCategorias; i++){
@@ -49,9 +51,16 @@ USUARIO* buscar_usuarioPorDNI(const std::string&DNI){
 }
 
 void seleccionarHabitacion(int piso){
+    if(!(piso>=1 && piso<=nPisos)){
+        cout<<"Piso invalido"<<endl;
+        return;
+    }
+
     cout<<"Habitaciones disponibles en el piso"<< piso <<":\n"
-    for(int j=0;j<piso[piso-1].nHabitaciones;j++){
-        cout<<"Habitacion #"<< (j+1)<< "";
+    for(int j=0;j<PISO[piso-1].nHabitaciones;j++){
+        if(ocupadas[piso-1][j]==0){
+            cout<<"Habitacion #"<< (j+1)<< "";
+        }
     }
     cout<<endl;
 
@@ -70,6 +79,7 @@ void seleccionarHabitacion(int piso){
 }
 //Reservar habitacione
 void reservarHabitacion(){
+    system("cls");
     string DNI; 
     cout<<"Ingrese su DNI: ";
     cin>>DNI;
@@ -101,7 +111,8 @@ void reservarHabitacion(){
 
     cout<<"ingrese el numero de la habitacion: ";
     cin>>num_Habitacion;
-    usuario->num_Habitacion=piso*100+num_Habitacion;
+    //combinar piso y numero de habitacion
+    usuario->num_Habitacion=piso*100+num_Habitacion; 
     cout<<"Habitacion reservada con exito\t"<<"H"<<piso<<num_Habitacion<<endl;
 }
 
