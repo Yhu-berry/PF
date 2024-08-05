@@ -33,11 +33,11 @@ void iniciar(){
 		cout<<endl;
 	}
     
-	// mostrar categorias ingresadas
+	// mostrar categorias y precios ingresados
 	cout<<"------------------------------------------------------"<<endl;
-	cout<<"   CATEGORIAS INGRESADAS: ";
+	cout<<"CATEGORIAS Y PRECIOS INGRESADOS: "<<endl<<endl;
 	for(int i=0; i<nCategorias; i++){
-		cout<<CATEGORIA[i]<<" ";
+		cout<<"   "<<CATEGORIA[i]<<" - S/ "<<PRECIO[i]<<endl;
 	}
 	cout<<endl<<"------------------------------------------------------"<<endl<<endl;
 	   
