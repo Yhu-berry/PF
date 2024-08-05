@@ -83,6 +83,14 @@ void iniciar(){
 }
 
 void agregarHabitaciones(int pisoIndex) {
+	int nNuevasHabitaciones;
+	
+	cout<<"Numero de habitaciones nuevas para el piso #"<<pisoIndex+1<<": ";
+	cin>>nNuevasHabitaciones;
+	cin.ignore();
+	
+	int habitacionInicio=PISO[pisoIndex].nHabitaciones;
+	PISO[pisoIndex].nHabitaciones=PISO[pisoIndex].nHabitaciones+nNuevasHabitaciones;
 }
 
 void editar(){
@@ -113,12 +121,14 @@ void editar(){
 				break;
 				
 			case 2:
-				// agregar habitaciones
+				// agregar habitaciones a un piso existente
 				break;		
 						
 			case 0:
 				// regresar al menu de mantenimiento
-				break;				
+				system("cls");
+				break;			
+					
 			default:
 				cout<<"Opcion invalida."<<endl;
 				break;
