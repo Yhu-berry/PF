@@ -6,10 +6,12 @@
 struct piso{
     int nHabitaciones;
     std::string categoriasHabitaciones[20];
+    float preciosHabitaciones[20];
 };
 
 extern int nCategorias;
 extern std::string CAT[20];
+extern float PRECIO[20];
 extern int nPisos;
 extern piso P[20];
 
