@@ -28,21 +28,20 @@ void menuinter() {
     system("cls");
 }
 
-void interfaz() {
-    system("cls");
-    cout <<"\tHOTEL\n";
-    for (int i=nPisos;i>=1;i--) {
-        cout <<"Piso "<<i<<"  ";
-        for (int j=1;j<=nHabitaciones;j++) {
+void mostrar_panel() {
+    for (int i = nPisos; i >= 1; i--) {
+        cout << "Piso " << i << "  ";
+        for (int j = 1; j <= P[i - 1].nHabitaciones; j++) {
             if (ocupados[i][j] == 1) {
-                cout<<"H"<<i<<j<<"["<<y<<"] ";
+                cout << "H" << i << j << "[1] ";
             } else {
-                cout<<"H"<<i<<j<<"["<<z<<"] ";
+                cout << "H" << i << j << "[0] ";
             }
         }
-        cout <<endl;
+        cout << endl;
     }
 }
+
 
 void mostrarTotalHabitaciones() {
     int totalHabitaciones = nPisos*nHabitaciones;
@@ -65,8 +64,7 @@ void mostrarTotalHabitaciones() {
 
 void menu() {
     cout <<"1. ver habitaciones disponibles\n";
-    cout <<"2. reservar habitacion\n";
-    cout <<"3. Mostrar total de habitaciones\n";
+    cout <<"2. Mostrar total de habitaciones\n";
     cout <<"Digite una opcion: "; cin >> op;
     menuinter();
     while (salir == 0) {
