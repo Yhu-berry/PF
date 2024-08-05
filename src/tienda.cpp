@@ -118,6 +118,15 @@ void anadirProductos(Producto menu[], int& cantidadProductos){
     cantidadProductos++;
     cout <<"Producto agregado con éxito.\n";
 }
-void eliminarProducos(){
-
+void eliminarProductos(Producto menu[], int& cantidadProductos){
+    string nombre;
+    cout <<"Ingrese el nombre del producto a eliminar: ";
+    getline(cin, nombre);
+    
+    int i;
+    for (i = 0; i < cantidadProductos; i++) {
+        if (menu[i].nombre == nombre) {
+            break;
+        }
+    }
 }
