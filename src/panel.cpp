@@ -8,19 +8,7 @@ using namespace std;
 void menuinter() {
     switch(op) {
         case 1: interfaz(); break;
-        case 2: {
-            system("cls");
-            cout <<"Que piso y habitacion le gustaria reservar?\n";
-            cout <<"Piso: "; cin>>po;
-            cout <<"Habitacion: "; cin>>ho;
-            if (po>0 && po<=nPisos && ho>0 && ho<=nHabitaciones && ocupados[po][ho] == 0) {
-                ocupados[po][ho] = 1;
-            } else {
-                cout <<"No esta disponible esa habitacion\n";
-            }
-            break;
-        }
-        case 3: mostrarTotalHabitaciones(); break;
+        case 2: mostrarTotalHabitaciones(); break;
         default:
             cout <<"Porfavor digite una opcion correcta";
     }
@@ -70,4 +58,14 @@ void menu() {
     while (salir == 0) {
         menu();
     }
+}
+void comprobarocupad{
+	system("cls");
+            if (po>0 && po<=nPisos && ho>0 && ho<=nHabitaciones && ocupados[po][ho] == 0) {
+                ocupados[po][ho] = 1;
+            } else {
+                cout <<"No esta disponible esa habitacion\n";
+            }
+            break;
+        }
 }
