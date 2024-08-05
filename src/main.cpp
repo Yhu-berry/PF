@@ -65,7 +65,8 @@ void mostrarInicio(){
                 tienda();
             break;
             case 5:
-                reportes();break;
+                reportes();
+            break;
             case 0:
                 cout << "Saliendo . . . " << endl;
             break;
