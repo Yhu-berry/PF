@@ -1,9 +1,9 @@
-//tienda.cpp
+//cafeteria.cpp
 
 #include <iostream>
 #include <string> 
 #include <vector>
-#include "tienda.h"
+#include "cafeteria.h"
 
 void mostrarInterfaz(){
     Producto menu[MAX_PRODUCTOS];

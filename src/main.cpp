@@ -5,7 +5,7 @@
 #include "panel.h"
 #include "gestion.h"
 #include "mantenimiento.h"
-#include "tienda.h"
+#include "cafeteria.h"
 #include "reportes.h"
 
 using namespace std;
@@ -62,7 +62,7 @@ void mostrarInicio(){
                 mantenimiento();
             break;
             case 4:
-                tienda();
+                cafeteria();
             break;
             case 5:
                 reportes();
