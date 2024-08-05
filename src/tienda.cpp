@@ -63,7 +63,19 @@ void venderProductos(Producto menu[], int cantidadProductos) {
                 break;
             }
         }
-	}
+        if (i < cantidadProductos) {
+            cout <<"Cantidad: ";
+            cin >> cantidad;
+            cin.ignore(); 
+            for (int j = 0; j < cantidad; j++) {
+                seleccion[cantidadSeleccion] = menu[i];
+                cantidadSeleccion++;
+            }
+        } else {
+            cout <<"Producto no encontrado.\n";
+        }
+    }
+	
 }
 
 void anadirProductos(){
