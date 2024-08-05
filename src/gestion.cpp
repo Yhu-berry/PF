@@ -10,7 +10,16 @@ using namespace std;
 
 //Variables globales
 vector<USUARIO> usuarios;
-
+void visualizarCategorias(){
+    cout<<"=============VISUALIZAR=============="<<endl;
+    for(int i=0; i<nCategorias; i++){
+        cout<<"Categoria: "<<CATEGORIA[i]<<"-Precio.S/"<<PRECIO[i]<<endl;
+    }
+    cout<<"======================================"<<endl;
+    cout<<"presione enter para continuar..";
+    cin.ignore();
+    cin.get();
+}
 //Codigo de las funciones 
 void ingresarDatos_usuario(USUARIO& usuario){
     cout<<"Nombre: ";
