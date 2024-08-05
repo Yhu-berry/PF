@@ -68,4 +68,28 @@ void completarPago(){
     cin.ignore();
     getline(cin, nombre);
 
+    bool encontrado = false;
+    for (int i = 0; i < numUsuarios; ++i) {
+        if (usuarios[i].nombre == nombre) {
+            encontrado = true;
+            cout << "Deuda actual del usuario " << usuarios[i].nombre << ": $" << usuarios[i].deuda << endl;
+            
+            float montoPago;
+            cout << "Ingrese el monto a pagar: ";
+            cin >> montoPago;
+            
+            if (montoPago > usuarios[i].deuda) {
+                cout << "El monto ingresado es mayor que la deuda actual. No se puede completar el pago." << endl;
+            } else {
+                usuarios[i].deuda -= montoPago;
+                cout << "Pago completado. La nueva deuda del usuario " << usuarios[i].nombre << " es: $" << usuarios[i].deuda << endl;
+            }
+            break;
+        }
+    }
+    
+    if (!encontrado) {
+        cout << "Usuario no encontrado." << endl;
+    }
+
 }
