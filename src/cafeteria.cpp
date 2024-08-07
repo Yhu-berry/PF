@@ -46,7 +46,7 @@ void cafeteria(){
 
 void mostrarProductos(){
     system("cls"); 
-    cout <<"Menú de Cafetería:\n";
+    cout <<"Menu de Cafeteria:\n";
     cout <<"Producto                        Precio\n";
     cout <<"--------------------------------------\n";
     for (int i = 0; i < cantidadProductos; i++) {
@@ -141,7 +141,7 @@ void venderProductos(){
 
 void anadirProductos(){
     if (cantidadProductos >= MAX_PRODUCTOS) {
-        cout <<"No se pueden agregar más productos. El menú está lleno.\n";
+        cout <<"No se pueden agregar más productos. El menu esta lleno.\n";
         return;
     }
     
@@ -153,7 +153,7 @@ void anadirProductos(){
     cin.ignore(); 
     menu[cantidadProductos] = nuevoProducto;
     cantidadProductos++;
-    cout <<"Producto agregado con éxito.\n";
+    cout <<"Producto agregado con exito.\n";
 }
 
 void eliminarProductos(){
@@ -173,8 +173,8 @@ void eliminarProductos(){
             menu[j] = menu[j + 1];
         }
         cantidadProductos--;
-        cout <<"Producto eliminado con éxito.\n";
-    } else {
-        cout <<"Producto no encontrado.\n";
-    }
+        cout <<"Producto eliminado con exito.\n";
+    } 	else {
+        	cout <<"Producto no encontrado.\n";
+    	}
 }
