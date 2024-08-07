@@ -54,63 +54,87 @@ void mostrarProductos(){
 }
 
 void venderProductos(){
-    Producto seleccion[MAX_PRODUCTOS];
-    int cantidadSeleccion = 0;
-    string nombre;
-    int cantidad;
-    system("cls");
-    cout <<"Ingrese los productos que desee. Escriba 'FIN' para terminar.\n";
-    
-    while (true) {
-        cout <<"Nombre del producto: ";
-        getline(cin, nombre);
-        if (nombre == "FIN") break;
+	string fin = "si";
+    string dni;
+    bool hayDNI = false;
+    cout << "Ingrese el DNI del huesped: ";
+    cin >> dni;
+    for (int i = 0; i < 100; i++ ){
+        if (dni == usuarios[i].DNI){
+            hayDNI = true;
+        }
+    }
+    if (hayDNI){
+        int cantidadSeleccion = 0;
+        string nombre;
+        int cantidad;
+        float total = 0;
+        cout <<"Digite lo que desee. "<<endl;
+       
+        while (fin == "si") {
+        	
+            cout <<"Nombre del producto: "; cin >> nombre;
+           
+            int i = 0;
+            for (i = 0; i < cantidadProductos; i++) {
+                if (menu[i].nombre == nombre) {
+                    break;
+                }
+            }
+            if (i < cantidadProductos) {
+                cout <<"Ingrese la cantidad del producto a comprar: ";
+                cin >> cantidad;
+                cin.ignore();
+                for (int j = 0; j < cantidad; j++) {
+                    seleccion[cantidadSeleccion] = menu[i];
+                    cantidadSeleccion++;
+                }
+            } else {
+                cout <<"Producto no encontrado.\n";
+            }
+            cout << endl;
+            cout <<"Desea comprar algun producto mas?si/no: ";cin >> fin;
+        }
         
-        int i;
-        for (i = 0; i < cantidadProductos; i++) {
-            if (menu[i].nombre == nombre) {
-                break;
+        if (cantidadSeleccion == 0) {
+            cout <<"No se ha seleccionado ningun producto.\n";
+            return;
+        }
+        
+       	system("cls");
+        cout <<"Factura:\n";
+        cout <<"Producto                        Cantidad  Subtotal\n";
+        cout <<"----------------------------------------------\n";
+       
+        for (int i = 0; i < cantidadProductos; i++) {
+            int cantidadProducto = 0;
+            for (int j = 0; j < cantidadSeleccion; j++) {
+                if (seleccion[j].nombre == menu[i].nombre) {
+                    cantidadProducto++;
+                }
+            }
+            if (cantidadProducto > 0) {
+                float subtotal = cantidadProducto * menu[i].precio;
+                total += subtotal;
+                cout << menu[i].nombre;
+                cout <<"                              "<< cantidadProducto <<"      "<< subtotal << '\n';
+                for (int k = 0; k < 100; k++){
+                    if (dni == usuarios[i].DNI){
+                        factura[i].nombre = usuarios[i].Nombre;
+                        factura[i].DNI = usuarios[i].DNI;
+                        factura[i].totalPagar = subtotal;
+                        facturados++;
+                    }
+                }
             }
         }
-        if (i < cantidadProductos) {
-            cout <<"Cantidad: ";
-            cin >> cantidad;
-            cin.ignore(); 
-            for (int j = 0; j < cantidad; j++) {
-                seleccion[cantidadSeleccion] = menu[i];
-                cantidadSeleccion++;
-            }
-        } else {
-            cout <<"Producto no encontrado.\n";
-        }
+       
+        cout <<"----------------------------------------------\n";
+        cout <<"Total: "<< total << '\n';
     }
-    if (cantidadSeleccion == 0) {
-        cout <<"No se ha seleccionado ningún producto.\n";
-        return;
-    }
-    
-    float total = 0;
-    cout <<"Factura:\n";
-    cout <<"Producto                        Cantidad  Subtotal\n";
-    cout <<"----------------------------------------------\n";
-    
-    for (int i = 0; i < cantidadProductos; i++) {
-        int cantidadProducto = 0;
-        for (int j = 0; j < cantidadSeleccion; j++) {
-            if (seleccion[j].nombre == menu[i].nombre) {
-                cantidadProducto++;
-            }
-        }
-        if (cantidadProducto > 0) {
-            float subtotal = cantidadProducto * menu[i].precio;
-            total += subtotal;
-            cout << menu[i].nombre;
-            cout <<"                          "<< cantidadProducto <<"      "<< subtotal << '\n';
-        }
-    }
-    
-    cout <<"----------------------------------------------\n";
-    cout <<"Total: "<< total << '\n';
+    else {
+        cout << "Usuario no encontrado"<<endl;
+	}
 }
 
 void anadirProductos(){
