@@ -8,11 +8,13 @@
 
 using namespace std;
 
-struct Administrador {
-    string nombreAdministrador;
+struct ADMIN {
+    string NombreAdmin;
     string Contrasena;
     strinf nombreHotel;
 }
+
+ADMIN admin;
 
 //Registros globales principales principales
 

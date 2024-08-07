@@ -10,17 +10,7 @@
 
 using namespace std;
 
-string nombresAdmin;
-
-struct ADMIN {
-    string NombreAdmin;
-    string Contrasena;
-    strinf nombreHotel;
-}
-
-ADMIN admin;
-
-void despedidad(){
+void mostrarDespedida(){
 	
 	system("cls");
 	cout<<"\n\n-----------------------------------------------------"<<endl;
@@ -39,6 +29,7 @@ void mostrarBienvenida(){
 }
 
 void mostrarInicio(){
+    int opcion;
 
     do {
         cout << " ---- INICIO---- "
@@ -80,6 +71,6 @@ void mostrarInicio(){
 int main (){
     mostrarBienvenida();
     mostrarInicio();
-    despedidad();
+    mostrarDespedida();
     return 0;
 }
