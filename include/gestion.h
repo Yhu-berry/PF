@@ -23,11 +23,12 @@ void ingresarDatos_usuario(USUARIO& usuario);
 
 USUARIO* buscar_usuarioPorDNI(const std::string& DNI);
 
-void mostrarHabitacionesDisponibles(int piso);
-
+voi visualizarCategorias_usuario();
 void seleccionarHabitacion(int piso);
 
 void reservarHabitacion();
+
+void gestion{};
 
 //Mostrar las reservas
 #endif //Fin de Gestion
