@@ -15,7 +15,7 @@ struct Producto {
 extern Producto menu[MAX_PRODUCTOS];
 extern int cantidadProductos;
 
-void mostrarInterfaz();
+void cafeteria();
 void venderProductos();
 void mostrarProductos();
 void anadirProductos();
