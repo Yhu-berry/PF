@@ -10,33 +10,35 @@ using namespace std;
 Producto menu[MAX_PRODUCTOS];
 int cantidadProductos = 0;
 
-void mostrarInterfaz(){
+//cafeteria
+void cafeteria(){
     int opcion;
     bool exit = false;
-    
+   
     while (!exit) {
         system("cls");
-        cout <<"\tRecepcion-Cafeteria\n\n";
+        cout <<"\tRECEPCION-CAFETERIA\n\n";
         cout <<"1. Anadir Producto\n";
         cout <<"2. Eliminar Producto\n";
         cout <<"3. Mostrar Productos\n";
         cout <<"4. Vender Productos\n";
-        cout <<"5. Salir\n";
+        cout <<"0. Salir\n";
         cout <<"Opcion: "; cin >> opcion;
         cin.ignore();
-          
+         
         switch (opcion) {
-            case 1: anadirProductos(); 
+            case 1: anadirProductos();
                 break;
-            case 2: eliminarProductos(); 
+            case 2: eliminarProductos();
                 break;
-            case 3: mostrarProductos(); cin.get(); 
+            case 3: mostrarProductos(); cin.get();
                 break;
-            case 4: venderProductos(); cin.get(); 
+            case 4: venderProductos(); cin.get();
                 break;
-            case 5: exit = true; 
+            case 0: exit = true;
+            	system("cls");
                 break;
-            default: cout << "Opción no válida. Intente nuevamente.\n";
+            default: cout << "Opcion no valida. Intente nuevamente.\n";
             cin.get();
         }
     }
