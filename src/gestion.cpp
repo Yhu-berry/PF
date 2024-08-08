@@ -47,8 +47,16 @@ void visualizarCategorias(){
     cin.ignore();
     cin.get();
 }
+*/
+
 //Codigo de las funciones 
-void ingresarDatos_usuario(USUARIO& usuario){
+//Ya no se va usar punteros o varibles por referencias ya que existe etructura que contiene todo
+void registar_usuario(){
+    ingresarDatos_usuario();
+}
+
+/*
+void ingresarDatos_usuario(){
     cout<<"Nombre: ";
     cin.ignore();
     getline(cin,usuario.Nombre); //Desde la entrada va a leer el nombre completo
@@ -60,10 +68,6 @@ void ingresarDatos_usuario(USUARIO& usuario){
     usuario.num_Habitacion=-1;
 }
 
-void registar_usuario(USUARIO& usuario){
-    ingresarDatos_usuario(usuario);
-    usuarios.push_back(usuario);
-}
 
 //Buscar al usuario por el DNI
 USUARIO* buscar_usuarioPorDNI(const std::string&DNI){
@@ -140,5 +144,4 @@ void reservarHabitacion(){
     usuario->num_Habitacion=piso*100+num_Habitacion; 
     cout<<"Habitacion reservada con exito\t"<<"H"<<piso<<num_Habitacion<<endl;
 }
-
 */
