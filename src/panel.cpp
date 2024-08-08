@@ -1,23 +1,50 @@
 //panel.cpp  
-
-#include "estructura.h"
 #include "panel.h"
+#include "estructura.h"
+#include "gestion.h"
 #include <iostream>
 #include <string>
 
 using namespace std;
-	
-void menuinter() {
-    switch(op) {
-        case 1: interfaz(); break;
-        case 2: mostrarTotalHabitaciones(); break;
+
+void panel(){
+    int opcion;
+    system("cls")
+    do{
+        cout << "==================== PANEL ====================" << endl;
+        cout << "1. Ver habitaciones disponibles" << endl;
+        cout << "2. Mostrar total de habitaciones" << endl;
+        cout << "0. Salir" << endl;
+        cout << "===============================================" << endl;
+        cout << "Digite una opcion: "; cin >> opcion;
+        
+        switch (opcion)
+        {
+        case 1:
+            mostrarPanel();
+            break;
+        case 2:
+            totalHabitaciones();
+            break;
+        case 0:
+            system("cls");
+            break;
         default:
-            cout <<"Porfavor digite una opcion correcta";
+            break;
+        }
     }
-    cout <<"\nPresione 0 para volver "; cin >> salir;
-    system("cls");
 }
 
+//continuar
+void verPanel(){
+    mostrarPanel();
+    int piso;
+    cout<<"Piso: "<< piso<<endl;
+}
+
+
+
+//corregir 
 void mostrarPanel() {
     system("cls");
     for (int i=pisos.size();i>0;i--) {
@@ -36,8 +63,7 @@ void mostrarPanel() {
     cin.get();
 }
 
-
-
+//se puede hacer sin punteros
 void mostrarTotalHabitaciones() {
     int totalHabitaciones = nPisos*nHabitaciones;
     int habitacionesOcupadas = 0;
@@ -55,24 +81,4 @@ void mostrarTotalHabitaciones() {
     cout <<"Total de habitaciones: "<<totalHabitaciones<<endl;
     cout <<"Habitaciones ocupadas: "<<habitacionesOcupadas<<endl;
     cout <<"Habitaciones disponibles: " <<habitacionesDisponibles<<endl;
-}
-
-void menu() {
-    cout <<"1. ver habitaciones disponibles\n";
-    cout <<"2. Mostrar total de habitaciones\n";
-    cout <<"Digite una opcion: "; cin >> op;
-    menuinter();
-    while (salir == 0) {
-        menu();
-    }
-}
-void comprobarocupad{
-	system("cls");
-            if (po>0 && po<=nPisos && ho>0 && ho<=nHabitaciones && ocupados[po][ho] == 0) {
-                ocupados[po][ho] = 1;
-            } else {
-                cout <<"No esta disponible esa habitacion\n";
-            }
-            break;
-        }
 }
