@@ -55,20 +55,24 @@ void registar_usuario(){
     ingresarDatos_usuario();
 }
 
-/*
+
 void ingresarDatos_usuario(){
     cout<<"Nombre: ";
     cin.ignore();
-    getline(cin,usuario.Nombre); //Desde la entrada va a leer el nombre completo
+    getline(cin,usuario[posicionUsuarios].Nombre); //Desde la entrada va a leer el nombre completo
     cout<<"DNI: ";
     cin.ignore();
-    getline(cin,usuario.DNI);
+    getline(cin,usuario[posicionUsuarios].DNI);
     cout<<"Edad: ";
-    cin>>usuario.edad;
-    usuario.num_Habitacion=-1;
+    cin>>usuario[posicionUsuarios].edad;
+    usuario[posicionUsuarios].num_Habitacion=-1;
+    //en cada iteracion se va a incrementar 
+    posicionUsuarios++;
+    //Cada usuario posee su posicion
+    TotalUsuarios=posicionUsuarios;
 }
 
-
+/*
 //Buscar al usuario por el DNI
 USUARIO* buscar_usuarioPorDNI(const std::string&DNI){
     for(int i=0; i<TotalUsuarios;i++){
