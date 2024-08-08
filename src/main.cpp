@@ -13,7 +13,7 @@ using namespace std;
 //declaracion de las funciones en main.cpp
 void mostrarBienvenida();
 void mostrarInicio();
-void despedida();
+void mostrarDespedida();
 
 void mostrarDespedida(){
 	
@@ -35,7 +35,8 @@ void mostrarBienvenida(){
 
 void mostrarInicio(){
     int opcion;
-
+    system ("cls");
+    
     do {
         cout << " ---- INICIO---- "
         cout << "1.   Panel" << endl;
@@ -44,7 +45,7 @@ void mostrarInicio(){
         cout << "4.   Tienda" << endl;
         cout << "5.   Reportes" << endl;
         cout << "0.   Salir" << endl;
-        cout << "Seleccione una opcion..." << endl;
+        cout << "Seleccione una opcion:" << endl;
 
         cin >> opcion;
         switch (opcion){
@@ -67,10 +68,12 @@ void mostrarInicio(){
                 cout << "Saliendo . . . " << endl;
             break;
             default:
-            cout << "opcion no valida" << endl;
+            system ("pause");
+            system("cls");
+            cout << "Opcion no valida." << endl;
 
         }
-    }
+    } while (opcion != 0);
 }
 
 int main (){
