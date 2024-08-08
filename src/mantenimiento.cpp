@@ -164,7 +164,7 @@ void editar(){
 
 void visualizar(){
 	system ("cls");
-	cout<<"===================== VISUALIZAR ====================="
+	cout<<"===================== VISUALIZAR =====================" << endl;
 	
 	// encontrar el numero maximo de habitaciones en cualquier piso
 	int maxHabitaciones=0;
