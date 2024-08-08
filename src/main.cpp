@@ -10,6 +10,11 @@
 
 using namespace std;
 
+//declaracion de las funciones en main.cpp
+void mostrarBienvenida();
+void mostrarInicio();
+void despedida();
+
 void mostrarDespedida(){
 	
 	system("cls");
