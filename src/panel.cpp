@@ -7,11 +7,18 @@
 
 using namespace std;
 
+
 //continuar
 void verPanel(){
     mostrarPanel();
     int piso;
-    cout<<"Piso: "<< piso<<endl;
+    cout<<"Piso: "<< piso;
+    if(!(piso >= 1 && piso <= nPisos)) {
+        cout << "Piso invalido" << endl;
+        return;
+    }
+
+    seleccionarHabitacion(piso);
 }
 
 
@@ -26,6 +33,7 @@ void mostrarPanel() {
                 cout << "H-" << i+1 << j+1 << "[1] ";
             } else {
                 cout << "H-" << i+1 << j+1 << "[0] ";
+
             }
         }
         cout << endl;
@@ -87,4 +95,3 @@ void panel() {
                 break;
         }
     } while(opcion!=0);
-}
