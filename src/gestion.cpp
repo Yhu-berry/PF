@@ -113,26 +113,28 @@ void seleccionarHabitacion(int piso){
     usuarios[posicionUsuarios-1].num_Habitacion=num_Habitacion;
 }
 
-/*
+
 //Reservar habitacione
 void reservarHabitacion(){
     system("cls");
-    string DNI; 
     cout<<"Ingrese su DNI: ";
-    cin>>DNI;
+    cin>>dni;
+    //se cambio el nombre de la variable, se prefirio usar una variable local de esta funcion en ve de un puntero
+    int usuarioEncontrado = buscar_usuarioPorDNI(DNI);
 
-    USUARIO* usuario = buscar_usuarioPorDNI(DNI);
-
-    if(!usuario==nullptr){
+    if(usuarioEncontrado==-1){
         cout<<"Usuario no encontrado"<<endl;
+        //
+        return;
     }
-                   
-    if(usuario->num_Habitacion!=-1){
+    //si el usuario es diferente a menos uno significa que ya se recorrio en otra instancia ese arreglo
+    //El numero de habitacion ya ha sido reservado             
+    if(usuarios[usuarioEncontrado].num_Habitacion !=-1){
         cout<<"Usted ya tiene una habitacion reservada"<<endl;
         return;
     }  
 //funcion de panel.h
-    mostrarPanel();
+    /*mostrarPanel();
 
     int piso;
     cout<<"piso: ";
@@ -150,6 +152,5 @@ void reservarHabitacion(){
     cin>>num_Habitacion;
     //combinar piso y numero de habitacion
     usuario->num_Habitacion=piso*100+num_Habitacion; 
-    cout<<"Habitacion reservada con exito\t"<<"H"<<piso<<num_Habitacion<<endl;
+    cout<<"Habitacion reservada con exito\t"<<"H"<<piso<<num_Habitacion<<endl;*/
 }
-*/
