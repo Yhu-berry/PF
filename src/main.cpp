@@ -18,19 +18,20 @@ void mostrarDespedida();
 void mostrarDespedida(){
 	
 	system("cls");
-	cout<<"\n\n-----------------------------------------------------"<<endl;
-	cout<<"-----------------------------------------------------"<<endl;
+	cout<<"======================================================"<<endl;
+	cout<<"======================================================"<<endl;
 	
-	cout<<"\tGRACIAS POR USAR EL PROGRAMA!"<<endl;
+	cout<<"          GRACIAS POR USAR EL PROGRAMA!"<<endl;
 	
-	cout<<"-----------------------------------------------------"<<endl;
-	cout<<"-----------------------------------------------------\n\n\n\n";
+	cout<<"======================================================"<<endl;
+	cout<<"======================================================" << endl;
 	
 }
 void mostrarBienvenida(){
-    cout << "* * * BIENVENIDO A LA GESTION DE HOTEL * * *" << endl;
-    cout << "Antes de empezar, diganos sus nombres: "; cin >> admin.NombreAdmin;
-    cout << "contrasena: "; cin >> admin.Contrasena;
+    cout << "========== BIENVENIDO A LA GESTION DE HOTEL ==========" << endl;
+    cout << "Antes de empezar:" << endl;
+    cout << " - Diganos sus nombres: "; cin >> admin.NombreAdmin;
+    cout << " - Contrasena: "; cin >> admin.Contrasena;
 }
 
 void mostrarInicio(){
@@ -38,14 +39,17 @@ void mostrarInicio(){
     system ("cls");
     
     do {
-        cout << " ---- INICIO---- "
-        cout << "1.   Panel" << endl;
-        cout << "2.   Gestion" << endl;
-        cout << "3.   Mantenimiento" << endl;
-        cout << "4.   Tienda" << endl;
-        cout << "5.   Reportes" << endl;
-        cout << "0.   Salir" << endl;
-        cout << "Seleccione una opcion:" << endl;
+        system ("cls");
+        cout << "================== GESTION DE HOTEL ==================" << endl;
+        cout << "======================= INICIO =======================" << endl;
+        cout << " 1. Panel" << endl;
+        cout << " 2. Gestion" << endl;
+        cout << " 3. Mantenimiento" << endl;
+        cout << " 4. Tienda" << endl;
+        cout << " 5. Reportes" << endl;
+        cout << " 0. Salir" << endl;
+        cout << "======================================================" << endl;
+        cout << "Seleccione una opcion: " << endl;
 
         cin >> opcion;
         switch (opcion){
@@ -65,7 +69,9 @@ void mostrarInicio(){
                 reportes();
             break;
             case 0:
+            
                 cout << "Saliendo . . . " << endl;
+                system ("pause");
             break;
             default:
             system ("pause");
