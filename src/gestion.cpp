@@ -59,30 +59,33 @@ void registar_usuario(){
 void ingresarDatos_usuario(){
     cout<<"Nombre: ";
     cin.ignore();
-    getline(cin,usuario[posicionUsuarios].Nombre); //Desde la entrada va a leer el nombre completo
+    getline(cin,usuarios[posicionUsuarios].Nombre); //Desde la entrada va a leer el nombre completo
     cout<<"DNI: ";
     cin.ignore();
-    getline(cin,usuario[posicionUsuarios].DNI);
+    getline(cin,usuarios[posicionUsuarios].DNI);
     cout<<"Edad: ";
-    cin>>usuario[posicionUsuarios].edad;
-    usuario[posicionUsuarios].num_Habitacion=-1;
+    cin>>usuarios[posicionUsuarios].edad;
+    usuarios[posicionUsuarios].num_Habitacion=-1;
     //en cada iteracion se va a incrementar 
     posicionUsuarios++;
     //Cada usuario posee su posicion
     TotalUsuarios=posicionUsuarios;
 }
 
-/*
+
 //Buscar al usuario por el DNI
-USUARIO* buscar_usuarioPorDNI(const std::string&DNI){
+int buscar_usuarioPorDNI(){
     for(int i=0; i<TotalUsuarios;i++){
-        if(usuarios[i].DNI==DNI){
-            return &usuarios[i];
+        if(usuarios[i].DNI==dni){
+            //
+            return i;
         }
     }
-    return nullptr;
+    //por el momento no se ha recorrido el registro posicion -1
+    return -1;
 }
 
+/*
 void seleccionarHabitacion(int piso){
     if(!(piso>=1 && piso<=nPisos)){
         cout<<"Piso invalido"<<endl;
