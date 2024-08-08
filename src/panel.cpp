@@ -11,6 +11,7 @@ void panel(){
     int opcion;
     system("cls")
     do{
+        //marca ERROR
         cout << "==================== PANEL ====================" << endl;
         cout << "1. Ver habitaciones disponibles" << endl;
         cout << "2. Mostrar total de habitaciones" << endl;
@@ -32,14 +33,20 @@ void panel(){
         default:
             break;
         }
-    }
+    }while(opcion!=0);
 }
 
 //continuar
 void verPanel(){
     mostrarPanel();
     int piso;
-    cout<<"Piso: "<< piso<<endl;
+    cout<<"Piso: "<< piso;
+    if(!(piso >= 1 && piso <= nPisos)) {
+        cout << "Piso invalido" << endl;
+        return;
+    }
+
+    seleccionarHabitacion(piso);
 }
 
 
@@ -47,13 +54,13 @@ void verPanel(){
 //corregir 
 void mostrarPanel() {
     system("cls");
-    for (int i=pisos.size();i>0;i--) {
+    for (int i=0;i<nPisos;i++) {
         cout <<"Piso #"<<i<< "  ";
-        for (int j=0;j<pisos[i-1].nHabitaciones;j++) {
-            if (ocupados[i-1][j] == 1) {
-                cout <<"H-"<<i<<j+1<<"[1] ";
+        for (int j=0;j<PISO[i].nHabitaciones;j++) {
+            if (ocupados[i][j] == 1) {
+                cout <<"H-"<<i+1<<j+1<<"[1] ";
             } else {
-                cout <<"H-"<<i<<j+1<<"[0] ";
+                cout <<"H-"<<i+1<<j+1<<"[0] ";
             }
         }
         cout <<endl;
@@ -65,20 +72,22 @@ void mostrarPanel() {
 
 //se puede hacer sin punteros
 void mostrarTotalHabitaciones() {
-    int totalHabitaciones = nPisos*nHabitaciones;
+    system("cls");
+    int totalHabitaciones = 0;
     int habitacionesOcupadas = 0;
-    int habitacionesDisponibles = 0;
+    /*int habitacionesDisponibles = 0;*/
     
-    for (int i=1;i<=nPisos;i++) {
-        for (int j=1;j<=nHabitaciones;j++) {
+    for (int i=0;i<nPisos;i++) {
+        totalHabitaciones += PISO[i].nHabitaciones;
+        for (int j=0;j<PISO[i].nHabitaciones;j++){
             if (ocupados[i][j] == 1) {
                 habitacionesOcupadas++;
-            } else {
+            } /*else {
                 habitacionesDisponibles++;
-            }
+            }*/
         }
     }
     cout <<"Total de habitaciones: "<<totalHabitaciones<<endl;
     cout <<"Habitaciones ocupadas: "<<habitacionesOcupadas<<endl;
-    cout <<"Habitaciones disponibles: " <<habitacionesDisponibles<<endl;
+    /*cout <<"Habitaciones disponibles: " <<habitacionesDisponibles<<endl;*/
 }
