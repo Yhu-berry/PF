@@ -1,78 +1,78 @@
 //panel.cpp  
 
-#include "estructura.h"
 #include "panel.h"
+#include "globals.h"
 #include <iostream>
 #include <string>
 
 using namespace std;
-	
-void menuinter() {
-    switch(op) {
-        case 1: interfaz(); break;
-        case 2: mostrarTotalHabitaciones(); break;
-        default:
-            cout <<"Porfavor digite una opcion correcta";
-    }
-    cout <<"\nPresione 0 para volver "; cin >> salir;
-    system("cls");
-}
 
 void mostrarPanel() {
     system("cls");
-    for (int i=pisos.size();i>0;i--) {
-        cout <<"Piso #"<<i<< "  ";
-        for (int j=0;j<pisos[i-1].nHabitaciones;j++) {
-            if (ocupados[i-1][j] == 1) {
-                cout <<"H-"<<i<<j+1<<"[1] ";
+    for (int i = 0; i < nPisos; i++) {
+        cout << "Piso #" << i+1 << "  ";
+        for (int j = 0; j < PISO[i].nHabitaciones; j++) {
+            if (ocupados[i][j] == 1) {
+                cout << "H-" << i+1 << j+1 << "[1] ";
             } else {
-                cout <<"H-"<<i<<j+1<<"[0] ";
+                cout << "H-" << i+1 << j+1 << "[0] ";
             }
         }
-        cout <<endl;
+        cout << endl;
     }
-    cout <<"Presione Enter para continuar...";
+    cout << "Presione Enter para continuar...";
     cin.ignore();
     cin.get();
 }
 
-
-
 void mostrarTotalHabitaciones() {
-    int totalHabitaciones = nPisos*nHabitaciones;
+    system("cls");
+    int totalHabitaciones = 0;
     int habitacionesOcupadas = 0;
-    int habitacionesDisponibles = 0;
-    
-    for (int i=1;i<=nPisos;i++) {
-        for (int j=1;j<=nHabitaciones;j++) {
+
+    for (int i = 0; i < nPisos; i++) {
+        totalHabitaciones += PISO[i].nHabitaciones;
+        for (int j = 0; j < PISO[i].nHabitaciones; j++) {
             if (ocupados[i][j] == 1) {
                 habitacionesOcupadas++;
-            } else {
-                habitacionesDisponibles++;
             }
         }
     }
-    cout <<"Total de habitaciones: "<<totalHabitaciones<<endl;
-    cout <<"Habitaciones ocupadas: "<<habitacionesOcupadas<<endl;
-    cout <<"Habitaciones disponibles: " <<habitacionesDisponibles<<endl;
+
+    int habitacionesDisponibles = totalHabitaciones - habitacionesOcupadas;
+
+    cout << "Total de habitaciones: " << totalHabitaciones << endl;
+    cout << "Habitaciones ocupadas: " << habitacionesOcupadas << endl;
+    cout << "Habitaciones disponibles: " << habitacionesDisponibles << endl;
 }
 
-void menu() {
-    cout <<"1. ver habitaciones disponibles\n";
-    cout <<"2. Mostrar total de habitaciones\n";
-    cout <<"Digite una opcion: "; cin >> op;
-    menuinter();
-    while (salir == 0) {
-        menu();
-    }
-}
-void comprobarocupad{
-	system("cls");
-            if (po>0 && po<=nPisos && ho>0 && ho<=nHabitaciones && ocupados[po][ho] == 0) {
-                ocupados[po][ho] = 1;
-            } else {
-                cout <<"No esta disponible esa habitacion\n";
-            }
-            break;
+void panel() {
+    int opcion;
+   
+    system("cls");
+    do {
+    	system("cls");
+        cout << "==================== PANEL ====================" << endl;
+        cout << "1. Ver habitaciones disponibles" << endl;
+        cout << "2. Mostrar total de habitaciones" << endl;
+        cout << "0. Salir" << endl;
+        cout << "===============================================" << endl;
+        cout << "Digite una opcion: "; cin >> opcion;
+       
+        switch(opcion){
+            case 1:
+                mostrarPanel();
+                break;
+            case 2:
+                mostrarTotalHabitaciones();
+                break;
+            case 0:
+                // salir al menu de main.cpp
+                system("cls");
+                break;              
+            default:
+                cout<<"Opcion no valida"<<endl;
+                break;
         }
+    } while(opcion!=0);
 }
