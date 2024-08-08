@@ -60,19 +60,21 @@ extern Producto seleccion[MAX_PRODUCTOS];
 
 //Gestion
 extern USUARIO usuarios[100];
-extern int TotalUsuarios = 0;
+extern int TotalUsuarios;
 
 //mantenimiento 
-extern int nCategorias = 0;
-extern string CAT[20];
+extern int nCategorias;
+extern std::string CAT[20];
 extern float PRECIO[20];
-extern int nPisos = 0;
+extern int nPisos;
+extern std::string CATEGORIA[20];
+extern float PRECIO[20];
 //P=Pisos?
-extern Piso P[20];
-extern int ocupados[100][100] = {0};
+extern Piso PISO[20];
+extern int ocupados[100][100];
 
 // Hotel a travez del panel
-extern int hotel[100][100],ocupados[100][100];
+extern int hotel[100][100];
 
 //panel variables necesarias para llenar con 1 y 0 
 extern int po;
