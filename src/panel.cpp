@@ -1,7 +1,9 @@
 //panel.cpp  
+
+#include "estructura.h"
+#include "panel.h"
 #include <iostream>
 #include <string>
-#include "panel.h"
 
 using namespace std;
 	

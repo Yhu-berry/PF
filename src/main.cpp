@@ -1,12 +1,12 @@
 //main.cpp 
 
-#include <iostream>
-#include <string>
 #include "panel.h"
 #include "gestion.h"
 #include "mantenimiento.h"
 #include "cafeteria.h"
 #include "reportes.h"
+#include <iostream>
+#include <string>
 
 using namespace std;
 

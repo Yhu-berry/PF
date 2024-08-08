@@ -1,11 +1,11 @@
 //gestion.cpp 
+
 #include "estructura.h"
 #include "gestion.h"
 #include "mantenimiento.h"  // nHabitaciones le pertenece a esta libreria
 #include "panel.h" //mostrarPanel()
 #include <iostream>
 #include <string>
-
 
 using namespace std;
 

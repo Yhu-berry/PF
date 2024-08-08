@@ -1,12 +1,10 @@
-#include "mantenimiento.h"
-#include <iostream>
-using namespace std;
 
-int nCategorias=0;
-string CATEGORIA[20];
-float PRECIO[20];
-int nPisos=0;
-piso PISO[20];
+#include "mantenimiento.h"
+#include "estructura.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 void iniciar(){
 	string categoria;
