@@ -20,7 +20,7 @@ void gestion(){
         cout<<"Opcion: ";
         cin>>opcion;
 
-        swich(opcion){
+        switch(opcion){
             case 1:
                 registrar_usuario(usuario);
                 break;
@@ -85,21 +85,19 @@ int buscar_usuarioPorDNI(){
     return -1;
 }
 
-/*
+
 void seleccionarHabitacion(int piso){
-    if(!(piso>=1 && piso<=nPisos)){
-        cout<<"Piso invalido"<<endl;
-        return;
-    }
+    //Se elimino la validacion del piso ya que esta en panel.cpp
 
     cout<<"Habitaciones disponibles en el piso"<< piso <<":\n"
     for(int j=0;j<PISO[piso-1].nHabitaciones;j++){
+        //si dentr esta el 0 es por ue esta desocupada
         if(ocupadas[piso-1][j]==0){
-            cout<<"Habitacion #"<< (j+1)<< "";
+            cout<<"Habitacion"<< (j+1)<< "";
         }
     }
     cout<<endl;
-
+    /*
     int num_Habitacion;
     cout<<"Ingrese el numero de la habitacion: ";
     cin>>num_Habitacion;
@@ -111,8 +109,10 @@ void seleccionarHabitacion(int piso){
     }
 
     //ocupar habitacion
-    ocupados[piso-1][num_Habitacion-1]=1;
+    ocupados[piso-1][num_Habitacion-1]=1;*/
 }
+
+/*
 //Reservar habitacione
 void reservarHabitacion(){
     system("cls");
