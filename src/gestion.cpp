@@ -97,19 +97,20 @@ void seleccionarHabitacion(int piso){
         }
     }
     cout<<endl;
-    /*
+
     int num_Habitacion;
-    cout<<"Ingrese el numero de la habitacion: ";
+    cout<<"numero de habitacion a reservar: ";
     cin>>num_Habitacion;
 
 //si es mayor que el numero de habitaciones y ocupar dicho valor en el vector
-    if(!(num_Habitacion1>= 1 && num_Habitacion <= PISO[piso-1].nHabitaciones || ocupados[piso-1][num_Habitacion-1]==1)){
+    if(!(num_Habitacion>= 1 && num_Habitacion <= PISO[piso-1].nHabitaciones || ocupados[piso-1][num_Habitacion-1]==1)){
         cout<<"Habitacion invalida"<<endl;
         return;
     }
 
-    //ocupar habitacion
-    ocupados[piso-1][num_Habitacion-1]=1;*/
+    //ocupar habitacion en panel
+    ocupados[piso-1][num_Habitacion-1]=1;
+    usuarios[posicionUsuarios-1].num_Habitacion=num_Habitacion;
 }
 
 /*
