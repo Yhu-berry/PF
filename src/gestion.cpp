@@ -1,4 +1,5 @@
 //gestion.cpp 
+
 #include "estructura.h"
 #include "gestion.h"
 #include "mantenimiento.h"  // nHabitaciones le pertenece a esta libreria
@@ -6,18 +7,18 @@
 #include <iostream>
 #include <string>
 
-
 using namespace std;
 
 void gestion(){
     int opcion;
     do{
         system("cls");
-        cout<<"\t\t\tGESTION\t\t\t"<<endl;
-        cout<<"1. Registrar usuario\n";
-        cout<<"2. Reservar habitacion\n";
-        cout<<"0. Volver al menu principal\n";
-        cout<<"Opcion: ";
+        cout<<"======================= GESTION ======================"<<endl;
+        cout<<" 1. Registrar usuario" <<endl;
+        cout<<" 2. Reservar habitacion" << endl;
+        cout<<" 0. Volver al inicio" << endl;
+        cout<<"======================================================"<<endl;
+        cout<<"Seleccione una opcion: ";
         cin>>opcion;
 
         switch(opcion){

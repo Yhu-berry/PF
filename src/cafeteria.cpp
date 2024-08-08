@@ -1,9 +1,9 @@
 //cafeteria.cpp
 
+#include "cafeteria.h"
+#include "estructura.h"
 #include <iostream>
 #include <string> 
-#include <vector>
-#include "cafeteria.h"
 
 using namespace std;
 
@@ -43,7 +43,7 @@ void cafeteria(){
             	system("cls");
                 break;
             default: 
-                cout << "Opcion no valida. Intente nuevamente." << endl;
+                cout << "Opcion no valida." << endl;
                 cin.get();
         }
     }

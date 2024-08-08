@@ -1,4 +1,5 @@
 #include "estructura.h"
+#include <string>
 //Inicializacion de las variables
 
 //reportes
