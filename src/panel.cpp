@@ -7,6 +7,16 @@
 
 using namespace std;
 
+//continuar
+void verPanel(){
+    mostrarPanel();
+    int piso;
+    cout<<"Piso: "<< piso<<endl;
+}
+
+
+
+//corregir 
 void mostrarPanel() {
     system("cls");
     for (int i = 0; i < nPisos; i++) {
@@ -25,6 +35,8 @@ void mostrarPanel() {
     cin.get();
 }
 
+
+//se puede hacer sin punteros
 void mostrarTotalHabitaciones() {
     system("cls");
     int totalHabitaciones = 0;

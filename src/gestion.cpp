@@ -21,9 +21,9 @@ void gestion(){
         cout<<"Seleccione una opcion: ";
         cin>>opcion;
 
-        swich(opcion){
+        switch(opcion){
             case 1:
-                registrar_usuario(usuario);
+                registrar_usuario();
                 break;
             case 2:
                 reservarHabitacion();
@@ -36,7 +36,7 @@ void gestion(){
     }while(opcion !=0);
 }
 
-/*
+
 //Usa arreglos de mantenimiento.h
 void visualizarCategorias(){
     cout<<"=============VISUALIZAR=============="<<endl;
@@ -48,10 +48,11 @@ void visualizarCategorias(){
     cin.ignore();
     cin.get();
 }
-*/
+
 
 //Codigo de las funciones 
 //Ya no se va usar punteros o varibles por referencias ya que existe etructura que contiene todo
+
 void registar_usuario(){
     ingresarDatos_usuario();
 }
@@ -60,93 +61,83 @@ void registar_usuario(){
 void ingresarDatos_usuario(){
     cout<<"Nombre: ";
     cin.ignore();
-    getline(cin,usuario[posicionUsuarios].Nombre); //Desde la entrada va a leer el nombre completo
+    getline(cin,usuarios[posicionUsuarios].Nombre); //Desde la entrada va a leer el nombre completo
     cout<<"DNI: ";
     cin.ignore();
-    getline(cin,usuario[posicionUsuarios].DNI);
+    getline(cin,usuarios[posicionUsuarios].DNI);
     cout<<"Edad: ";
-    cin>>usuario[posicionUsuarios].edad;
-    usuario[posicionUsuarios].num_Habitacion=-1;
+    cin>>usuarios[posicionUsuarios].edad;
+    usuarios[posicionUsuarios].num_Habitacion=-1;
     //en cada iteracion se va a incrementar 
     posicionUsuarios++;
     //Cada usuario posee su posicion
     TotalUsuarios=posicionUsuarios;
 }
 
-/*
+
 //Buscar al usuario por el DNI
-USUARIO* buscar_usuarioPorDNI(const std::string&DNI){
+int buscar_usuarioPorDNI(){
     for(int i=0; i<TotalUsuarios;i++){
-        if(usuarios[i].DNI==DNI){
-            return &usuarios[i];
+        if(usuarios[i].DNI==dni){
+            //
+            return i;
         }
     }
-    return nullptr;
+    //por el momento no se ha recorrido el registro posicion -1
+    return -1;
 }
 
+
 void seleccionarHabitacion(int piso){
-    if(!(piso>=1 && piso<=nPisos)){
-        cout<<"Piso invalido"<<endl;
-        return;
-    }
+    //Se elimino la validacion del piso ya que esta en panel.cpp
 
     cout<<"Habitaciones disponibles en el piso"<< piso <<":\n"
     for(int j=0;j<PISO[piso-1].nHabitaciones;j++){
+        //si dentr esta el 0 es por ue esta desocupada
         if(ocupadas[piso-1][j]==0){
-            cout<<"Habitacion #"<< (j+1)<< "";
+            cout<<"Habitacion"<< (j+1)<< "";
         }
     }
     cout<<endl;
 
     int num_Habitacion;
-    cout<<"Ingrese el numero de la habitacion: ";
+    cout<<"numero de habitacion a reservar: ";
     cin>>num_Habitacion;
 
 //si es mayor que el numero de habitaciones y ocupar dicho valor en el vector
-    if(!(num_Habitacion1>= 1 && num_Habitacion <= PISO[piso-1].nHabitaciones || ocupados[piso-1][num_Habitacion-1]==1)){
+    if(!(num_Habitacion>= 1 && num_Habitacion <= PISO[piso-1].nHabitaciones || ocupados[piso-1][num_Habitacion-1]==1)){
         cout<<"Habitacion invalida"<<endl;
         return;
     }
 
-    //ocupar habitacion
+    //ocupar habitacion en panel
     ocupados[piso-1][num_Habitacion-1]=1;
+    usuarios[posicionUsuarios-1].num_Habitacion=num_Habitacion;
 }
+
+
 //Reservar habitacione
 void reservarHabitacion(){
     system("cls");
-    string DNI; 
     cout<<"Ingrese su DNI: ";
-    cin>>DNI;
+    cin>>dni;
+    //se cambio el nombre de la variable, se prefirio usar una variable local de esta funcion en ve de un puntero
+    int usuarioEncontrado = buscar_usuarioPorDNI();
 
-    USUARIO* usuario = buscar_usuarioPorDNI(DNI);
-
-    if(!usuario==nullptr){
+    if(usuarioEncontrado==-1){
         cout<<"Usuario no encontrado"<<endl;
+        //
+        return;
     }
-                   
-    if(usuario->num_Habitacion!=-1){
+    //si el usuario es diferente a menos uno significa que ya se recorrio en otra instancia ese arreglo
+    //El numero de habitacion ya ha sido reservado             
+    if(usuarios[usuarioEncontrado].num_Habitacion !=-1){
         cout<<"Usted ya tiene una habitacion reservada"<<endl;
         return;
-    }  
+    } 
+//mantenimiento para saber los precios (lo muestra de manera superficial mejorar eso)
+visualizarCategorias()
 //funcion de panel.h
-    mostrarPanel();
+mostrarPanel();
 
-    int piso;
-    cout<<"piso: ";
-    cin>>piso;
-    if(!(piso>=1 && piso<=nPisos)){
-        cout<<"Piso invalido"<<endl;
-        return;
-    }   
-
-    seleccionarHabitacion(piso);
-
-    int num_Habitacion;
-
-    cout<<"ingrese el numero de la habitacion: ";
-    cin>>num_Habitacion;
-    //combinar piso y numero de habitacion
-    usuario->num_Habitacion=piso*100+num_Habitacion; 
-    cout<<"Habitacion reservada con exito\t"<<"H"<<piso<<num_Habitacion<<endl;
 }
-*/
