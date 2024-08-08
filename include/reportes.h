@@ -3,7 +3,7 @@
 #ifndef REPORTES_H
 #define REPORTES_H
 
-void interfazReportes();
+void reportes();
 void verHistorial();
 void completarPago();
 
