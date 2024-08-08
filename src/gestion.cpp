@@ -1,16 +1,41 @@
 //gestion.cpp 
+#include "estructura.h"
 #include "gestion.h"
 #include "mantenimiento.h"  // nHabitaciones le pertenece a esta libreria
 #include "panel.h" //mostrarPanel()
 #include <iostream>
 #include <string>
-#include <vector>
+
 
 using namespace std;
 
-//Variables globales
-vector<USUARIO> usuarios;
+void gestion(){
+    int opcion;
+    do{
+        system("cls");
+        cout<<"\t\t\tGESTION\t\t\t"<<endl;
+        cout<<"1. Registrar usuario\n";
+        cout<<"2. Reservar habitacion\n";
+        cout<<"0. Volver al menu principal\n";
+        cout<<"Opcion: ";
+        cin>>opcion;
 
+        swich(opcion){
+            case 1:
+                registrar_usuario(usuario);
+                break;
+            case 2:
+                reservarHabitacion();
+                break;
+            case 0:
+                break;
+            default:
+                cout<<"Opcion incorrecta\n";
+        }
+    }while(opcion !=0);
+}
+
+/*
 //Usa arreglos de mantenimiento.h
 void visualizarCategorias(){
     cout<<"=============VISUALIZAR=============="<<endl;
@@ -116,28 +141,4 @@ void reservarHabitacion(){
     cout<<"Habitacion reservada con exito\t"<<"H"<<piso<<num_Habitacion<<endl;
 }
 
-void gestion(){
-    int opcion;
-    do{
-        system("cls");
-        cout<<"\t\t\tGESTION\t\t\t"<<endl;
-        cout<<"1. Registrar usuario\n";
-        cout<<"2. Reservar habitacion\n";
-        cout<<"0. Volver al menu principal\n";
-        cout<<"Opcion: ";
-        cin>>opcion;
-
-        swich(opcion){
-            case 1:
-                registrar_usuario(usuario);
-                break;
-            case 2:
-                reservarHabitacion();
-                break;
-            case 0:
-                break;
-            default:
-                cout<<"Opcion incorrecta\n";
-        }
-    }while(opcion !=0);
-}
+*/
