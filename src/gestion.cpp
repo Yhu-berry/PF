@@ -22,7 +22,7 @@ void gestion(){
 
         switch(opcion){
             case 1:
-                registrar_usuario(usuario);
+                registrar_usuario();
                 break;
             case 2:
                 reservarHabitacion();
@@ -35,7 +35,7 @@ void gestion(){
     }while(opcion !=0);
 }
 
-/*
+
 //Usa arreglos de mantenimiento.h
 void visualizarCategorias(){
     cout<<"=============VISUALIZAR=============="<<endl;
@@ -47,10 +47,11 @@ void visualizarCategorias(){
     cin.ignore();
     cin.get();
 }
-*/
+
 
 //Codigo de las funciones 
 //Ya no se va usar punteros o varibles por referencias ya que existe etructura que contiene todo
+
 void registar_usuario(){
     ingresarDatos_usuario();
 }
@@ -120,7 +121,7 @@ void reservarHabitacion(){
     cout<<"Ingrese su DNI: ";
     cin>>dni;
     //se cambio el nombre de la variable, se prefirio usar una variable local de esta funcion en ve de un puntero
-    int usuarioEncontrado = buscar_usuarioPorDNI(DNI);
+    int usuarioEncontrado = buscar_usuarioPorDNI();
 
     if(usuarioEncontrado==-1){
         cout<<"Usuario no encontrado"<<endl;
@@ -132,25 +133,10 @@ void reservarHabitacion(){
     if(usuarios[usuarioEncontrado].num_Habitacion !=-1){
         cout<<"Usted ya tiene una habitacion reservada"<<endl;
         return;
-    }  
+    } 
+//mantenimiento para saber los precios (lo muestra de manera superficial mejorar eso)
+visualizarCategorias()
 //funcion de panel.h
-    /*mostrarPanel();
+mostrarPanel();
 
-    int piso;
-    cout<<"piso: ";
-    cin>>piso;
-    if(!(piso>=1 && piso<=nPisos)){
-        cout<<"Piso invalido"<<endl;
-        return;
-    }   
-
-    seleccionarHabitacion(piso);
-
-    int num_Habitacion;
-
-    cout<<"ingrese el numero de la habitacion: ";
-    cin>>num_Habitacion;
-    //combinar piso y numero de habitacion
-    usuario->num_Habitacion=piso*100+num_Habitacion; 
-    cout<<"Habitacion reservada con exito\t"<<"H"<<piso<<num_Habitacion<<endl;*/
 }
