@@ -1,19 +1,24 @@
 //reportes.cpp 
 
 #include "reportes.h"
+#include "estructura.h"
+#include "gestion.h"
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 //interfaz de la funcion 
-void interfazReportes(){
+void reportes(){
+
+    int opcion;
+
     do {
-        int opcion;
         cout << " ----REPORTES---- " << endl;
         cout << "1.   Ver historial" << endl;
         cout << "2.   Completar un pago" << endl;
         cout << "0.   Volver al inicio" << endl;
-        cout << "Seleccione una opcion"; cin >> opcion;
+        cout << "Seleccione una opcion: "; cin >> opcion;
 
         switch (opcion){
             case 1: 
@@ -22,7 +27,8 @@ void interfazReportes(){
             case 2: 
                 completarPago();
             default:
-                cout << "Opcion no valida";
+                cout << "Opcion no valida."<< endl;
+                system ("cls");
         }
     } while (opcion != 0); 
 }
@@ -30,25 +36,26 @@ void interfazReportes(){
 //funcion para imprimir los datos del usuario en base a su nombre
 void verHistorial(){
 
-    string nombre;
-    cout << "Ingrese el nombre del usuario cuyo historial desea ver: ";
+    string dni;
+    cout << "Ingrese el DNI del usuario cuyo historial desea ver: ";
     cin.ignore();
-    getline(cin, nombre);
+    getline(cin, dni);
 
+    //busqueda del usuario por el DNI
     bool encontrado = false;
-    for (int i = 0; i < numUsuarios; ++i) {
-        if (usuarios[i].nombre == nombre) {
+    for (int i = 0; i < TotalUsuarios; ++i) {
+        if (usuarios[i].DNI == dni) {
             encontrado = true;
             // Se va a mostrar la información del usuario
-            cout << "Nombre: " << usuarios[i].nombre << endl;
-            cout << "DNI: " << usuarios[i].dni << endl;
-            cout << "Habitacion: " << usuarios[i].habitacion << endl;
-            cout << "Deuda actual: $" << usuarios[i].deuda << endl;
+            cout << "Nombre: " << factura[i].nombre << endl;
+            cout << "DNI: " << factura[i].DNI << endl;
+            cout << "Habitacion: " << factura[i].habiA << endl;
+            cout << "Deuda actual: $" << factura[i].totalPagar << endl;
             
             // Se mostrara la información del piso
-            for (int j = 0; j < numPisos; ++j) {
-                if (pisos[j].numero == usuarios[i].habitacion) {
-                    cout << "Categoría del piso: " << pisos[j].categoria << endl;
+            for (int j = 0; j < nPisos; ++j) {
+                if (PISO[j].NroHabitacion[j] == usuarios[i].num_Habitacion) {
+                    cout << "Categoría del piso: " << pisos[j].categoriasHabitaciones[j] << endl;
                     break;
                 }
             }
@@ -57,11 +64,12 @@ void verHistorial(){
     }
     
     if (!encontrado) {
+        system("cls");
         cout << "Usuario no encontrado." << endl;
     }
 }
 
-//se empieza por buscar de nuevo su nombre 
+//se empieza por buscar de nuevo su DNI
 void completarPago(){
     string nombre;
     cout << "Ingrese el nombre del usuario para completar el pago: ";
