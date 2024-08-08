@@ -7,9 +7,6 @@
 
 using namespace std;
 
-Producto menu[MAX_PRODUCTOS];
-int cantidadProductos = 0;
-
 //cafeteria
 void cafeteria(){
     int opcion;
@@ -17,50 +14,62 @@ void cafeteria(){
    
     while (!exit) {
         system("cls");
-        cout <<"\tRECEPCION-CAFETERIA\n\n";
-        cout <<"1. Anadir Producto\n";
-        cout <<"2. Eliminar Producto\n";
-        cout <<"3. Mostrar Productos\n";
-        cout <<"4. Vender Productos\n";
-        cout <<"0. Salir\n";
-        cout <<"Opcion: "; cin >> opcion;
+        cout <<"====================== CAFETERIA ====================="<< endl;
+        cout <<" 1. Anadir Producto"<< endl;
+        cout <<" 2. Eliminar Producto" << endl;
+        cout <<" 3. Mostrar Productos" << endl;
+        cout <<" 4. Vender Productos" << endl;
+        cout <<" 0. Volver al inicio" << endl;
+        cout <<"======================================================" << endl;
+        cout <<" Seleccione una opcion: "; cin >> opcion;
         cin.ignore();
          
         switch (opcion) {
-            case 1: anadirProductos();
+            case 1: 
+                anadirProductos();
                 break;
-            case 2: eliminarProductos();
+            case 2: 
+                eliminarProductos();
                 break;
-            case 3: mostrarProductos(); cin.get();
+            case 3: 
+                mostrarProductos(); 
+                cin.get();
                 break;
-            case 4: venderProductos(); cin.get();
+            case 4: 
+                venderProductos(); 
+                cin.get();
                 break;
             case 0: exit = true;
             	system("cls");
                 break;
-            default: cout << "Opcion no valida. Intente nuevamente.\n";
-            cin.get();
+            default: 
+                cout << "Opcion no valida. Intente nuevamente." << endl;
+                cin.get();
         }
     }
 }
 
 void mostrarProductos(){
     system("cls"); 
-    cout <<"Menu de Cafeteria:\n";
-    cout <<"Producto                        Precio\n";
-    cout <<"--------------------------------------\n";
+    cout <<"================= MOSTRAR PRODUCTOS ==================" << endl;
+    cout <<"Producto                        Precio" << endl;
+    cout <<"------------------------------------------------------" << endl;
     for (int i = 0; i < cantidadProductos; i++) {
         cout << menu[i].nombre;
-        cout <<"                          " << menu[i].precio << '\n';
+        cout <<"                          " << menu[i].precio << endl;
     }
+    cout << "======================================================" << endl;
 }
 
 void venderProductos(){
 	string fin = "si";
     string dni;
     bool hayDNI = false;
-    cout << "Ingrese el DNI del huesped: ";
+    cout << "================== VENDER PRODUCTOS ==================" << endl;
+    cout << "Ingrese el DNI del usuario: " << endl;
+    cout << " - DNI: " << endl;
     cin >> dni;
+    cout << "------------------------------------------------------" << endl;
     for (int i = 0; i < 100; i++ ){
         if (dni == usuarios[i].DNI){
             hayDNI = true;
@@ -71,11 +80,11 @@ void venderProductos(){
         string nombre;
         int cantidad;
         float total = 0;
-        cout <<"Digite lo que desee. "<<endl;
+        cout <<"Digite lo que desee: "<<endl;
        
         while (fin == "si") {
         	
-            cout <<"Nombre del producto: "; cin >> nombre;
+            cout <<" - Nombre del producto: "; cin >> nombre;
            
             int i = 0;
             for (i = 0; i < cantidadProductos; i++) {
@@ -84,29 +93,31 @@ void venderProductos(){
                 }
             }
             if (i < cantidadProductos) {
-                cout <<"Ingrese la cantidad del producto a comprar: ";
+                cout <<" - Cantidad del producto a comprar: ";
                 cin >> cantidad;
+                cout << "------------------------------------------------------" << endl;
                 cin.ignore();
                 for (int j = 0; j < cantidad; j++) {
                     seleccion[cantidadSeleccion] = menu[i];
                     cantidadSeleccion++;
                 }
             } else {
-                cout <<"Producto no encontrado.\n";
+                cout <<"Producto no encontrado." << endl;
+                cout << "------------------------------------------------------" << endl;
             }
             cout << endl;
             cout <<"Desea comprar algun producto mas?si/no: ";cin >> fin;
         }
         
-        if (cantidadSeleccion == 0) {
-            cout <<"No se ha seleccionado ningun producto.\n";
+        if (cantidadSeleccion <= 0) {
+            cout <<"No se ha seleccionado ningun producto." << endl;
             return;
         }
         
        	system("cls");
-        cout <<"Factura:\n";
-        cout <<"Producto                        Cantidad  Subtotal\n";
-        cout <<"----------------------------------------------\n";
+        cout <<"====================== FACTURA =======================:" << endl;
+        cout <<"Producto                        Cantidad  Subtotal" << endl;
+        cout <<"------------------------------------------------------" << endl;
        
         for (int i = 0; i < cantidadProductos; i++) {
             int cantidadProducto = 0;
@@ -131,8 +142,8 @@ void venderProductos(){
             }
         }
        
-        cout <<"----------------------------------------------\n";
-        cout <<"Total: "<< total << '\n';
+        cout <<"------------------------------------------------------" << endl;
+        cout <<"Total: "<< total << endl;
     }
     else {
         cout << "Usuario no encontrado"<<endl;
@@ -141,24 +152,28 @@ void venderProductos(){
 
 void anadirProductos(){
     if (cantidadProductos >= MAX_PRODUCTOS) {
-        cout <<"No se pueden agregar más productos. El menu esta lleno.\n";
+        cout <<"No se pueden agregar más productos. El menu esta lleno." << endl;
         return;
     }
     
     Producto nuevoProducto;
-    cout <<"Ingrese el nombre del producto: ";
+    cout << "=================== ANADIR PRODUCTO ==================" << endl;
+    cout <<" - Ingrese el nombre del producto: ";
     getline(cin, nuevoProducto.nombre);
-    cout <<"Ingrese el precio del producto: ";
+    cout <<" - Ingrese el precio del producto: ";
     cin >> nuevoProducto.precio;
     cin.ignore(); 
     menu[cantidadProductos] = nuevoProducto;
     cantidadProductos++;
-    cout <<"Producto agregado con exito.\n";
+    cout <<"Producto agregado con exito." << endl;
+    cout << "======================================================" << endl;
 }
 
 void eliminarProductos(){
     string nombre;
-    cout <<"Ingrese el nombre del producto a eliminar: ";
+    cout << "================= ELIMINAR PRODUCTO ==================" << endl;
+    cout <<"Ingrese el nombre del producto: " << endl;
+    cout << " - Nombre: " << endl;
     getline(cin, nombre);
     
     int i;
@@ -173,8 +188,10 @@ void eliminarProductos(){
             menu[j] = menu[j + 1];
         }
         cantidadProductos--;
-        cout <<"Producto eliminado con exito.\n";
+        cout <<"Producto eliminado con exito." << endl;
+        cout << "======================================================" << endl;
     } 	else {
-        	cout <<"Producto no encontrado.\n";
+        	cout <<"Producto no encontrado." << endl;
+            cout << "======================================================" << endl;
     	}
 }
