@@ -71,32 +71,33 @@ void verHistorial(){
 
 //se empieza por buscar de nuevo su DNI
 void completarPago(){
-    string nombre;
-    cout << "Ingrese el nombre del usuario para completar el pago: ";
+    string dni;
+    cout << "Ingrese el DNI del usuario para completar el pago: ";
     cin.ignore();
-    getline(cin, nombre);
+    getline(cin, dni);
 
     bool encontrado = false;
-    for (int i = 0; i < numUsuarios; ++i) {
-        if (usuarios[i].nombre == nombre) {
+    for (int i = 0; i < TotalUsuarios; ++i) {
+        if (factura[i].DNI == nombre) {
             encontrado = true;
-            cout << "Deuda actual del usuario " << usuarios[i].nombre << ": $" << usuarios[i].deuda << endl;
+            cout << "Deuda actual del usuario " << factura[i].nombre << ": $" << factura[i].totalPagar << endl;
             
             float montoPago;
             cout << "Ingrese el monto a pagar: ";
             cin >> montoPago;
             
-            if (montoPago > usuarios[i].deuda) {
+            if (montoPago > factura[i].totalPagar) {
                 cout << "El monto ingresado es mayor que la deuda actual. No se puede completar el pago." << endl;
             } else {
-                usuarios[i].deuda -= montoPago;
-                cout << "Pago completado. La nueva deuda del usuario " << usuarios[i].nombre << " es: $" << usuarios[i].deuda << endl;
+                usuarios[i].totalPagar -= montoPago;
+                cout << "Pago completado. La nueva deuda del usuario " << factura[i].nombre << " es: $" << usuarios[i].deuda << endl;
             }
             break;
         }
     }
     
     if (!encontrado) {
+        system("cls");
         cout << "Usuario no encontrado." << endl;
     }
 
