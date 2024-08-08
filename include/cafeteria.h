@@ -7,6 +7,6 @@ void cafeteria();
 void venderProductos();
 void mostrarProductos();
 void anadirProductos();
-void eliminarProducos();
+void eliminarProductos();
 
 #endif

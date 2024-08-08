@@ -2,8 +2,8 @@
 #ifndef PANEL_H
 #define PANEL_H
 
-void menu();
-void mostrar_panel();
+void panel();
+void mostrarPanel();
 void mostrarTotalHabitaciones();
 
 #endif
