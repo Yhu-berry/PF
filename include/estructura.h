@@ -8,7 +8,6 @@
 // Estructura del administrador del hotel
 struct ADMIN {
     std::string NombreAdmin;
-    std::string Contrasena;
     std::string nombreHotel;
 };
 

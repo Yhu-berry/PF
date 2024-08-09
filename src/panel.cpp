@@ -65,6 +65,7 @@ void mostrarTotalHabitaciones() {
     cout << "Total de habitaciones: " << totalHabitaciones << endl;
     cout << "Habitaciones ocupadas: " << habitacionesOcupadas << endl;
     cout << "Habitaciones disponibles: " << habitacionesDisponibles << endl;
+    system("pause");
 }
 
 void panel() {

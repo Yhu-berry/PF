@@ -62,17 +62,20 @@ void mostrarProductos(){
 }
 
 void venderProductos(){
+
+    system ("cls");
 	string fin = "si";
     string dni;
     bool hayDNI = false;
     cout << "================== VENDER PRODUCTOS ==================" << endl;
     cout << "Ingrese el DNI del usuario: " << endl;
-    cout << " - DNI: " << endl;
+    cout << " - DNI: ";
     cin >> dni;
     cout << "------------------------------------------------------" << endl;
     for (int i = 0; i < 100; i++ ){
         if (dni == usuarios[i].DNI){
             hayDNI = true;
+            break;
         }
     }
     if (hayDNI){
@@ -151,6 +154,8 @@ void venderProductos(){
 }
 
 void anadirProductos(){
+
+    system("cls");
     if (cantidadProductos >= MAX_PRODUCTOS) {
         cout <<"No se pueden agregar más productos. El menu esta lleno." << endl;
         return;
@@ -170,10 +175,12 @@ void anadirProductos(){
 }
 
 void eliminarProductos(){
+
+    system("cls");
     string nombre;
     cout << "================= ELIMINAR PRODUCTO ==================" << endl;
     cout <<"Ingrese el nombre del producto: " << endl;
-    cout << " - Nombre: " << endl;
+    cout << " - Nombre: ";
     getline(cin, nombre);
     
     int i;

@@ -32,7 +32,9 @@ void mostrarBienvenida(){
     cout << "========== BIENVENIDO A LA GESTION DE HOTEL ==========" << endl;
     cout << "Antes de empezar:" << endl;
     cout << " - Diganos sus nombres: "; cin >> admin.NombreAdmin;
-    cout << " - Contrasena: "; cin >> admin.Contrasena;
+    cout << " - Diganos el nombre del hotel: "; cin >> admin.nombreHotel;
+    cout << system("cls");
+    cout << "Bienvenido " << admin.NombreAdmin << endl;
 }
 
 void mostrarInicio(){
@@ -42,15 +44,16 @@ void mostrarInicio(){
     do {
         system ("cls");
         cout << "================== GESTION DE HOTEL ==================" << endl;
+        cout << "        " << admin.nombreHotel << endl;
         cout << "======================= INICIO =======================" << endl;
         cout << " 1. Panel" << endl;
         cout << " 2. Gestion" << endl;
         cout << " 3. Mantenimiento" << endl;
-        cout << " 4. Tienda" << endl;
+        cout << " 4. Cafeteria" << endl;
         cout << " 5. Reportes" << endl;
         cout << " 0. Salir" << endl;
         cout << "======================================================" << endl;
-        cout << "Seleccione una opcion:\t";
+        cout << "Seleccione una opcion:" << endl;
         cin >> opcion;
         switch (opcion){
             case 1:
