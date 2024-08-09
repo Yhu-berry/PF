@@ -132,7 +132,9 @@ void editar(){
 				cout<<"Desea agregar habitaciones ahora? (S/N): ";
 				cin>>agregarAhora;
 				cin.ignore();
-				if(agregarAhora='s'||agregarAhora='S')
+				
+				//Se estaba usando = para la comparacion
+				if(agregarAhora=='s'||agregarAhora=='S')
 					agregarHabitaciones(nPisos-1);
 				break;
 				
