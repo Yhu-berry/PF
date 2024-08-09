@@ -1,7 +1,7 @@
 //panel.cpp  
 
 #include "panel.h"
-#include "globals.h"
+#include "estructura.h"
 #include <iostream>
 #include <string>
 
@@ -95,3 +95,4 @@ void panel() {
                 break;
         }
     } while(opcion!=0);
+}
