@@ -3,6 +3,8 @@
 //Inicializacion de las variables
 
 //reportes
+ADMIN admin;
+
 Report factura[100];
 int facturados = 0;
 int facturadosGestion = 0;
@@ -18,7 +20,6 @@ USUARIO usuarios[100];
 int TotalUsuarios = 0;
 
 //mantenimiento
-std::string CAT[20];
 int nCategorias = 0;
 std::string CATEGORIA[20];
 float PRECIO[20];

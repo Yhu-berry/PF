@@ -3,7 +3,6 @@
 #define ESTRUCTURA_H
 
 #include <string>
-
 #define MAX_PRODUCTOS 100
 
 // Estructura del administrador del hotel
@@ -11,10 +10,10 @@ struct ADMIN {
     std::string NombreAdmin;
     std::string Contrasena;
     std::string nombreHotel;
-}
+};
 
 //Falta definir que tipo de variable es o si es un arreglo
-ADMIN admin;
+extern ADMIN admin;
 
 //Registros globales principales principales
 struct USUARIO {
@@ -22,6 +21,7 @@ struct USUARIO {
     int edad;
     int num_Habitacion;
     std::string DNI;
+    int deuda;
 };
 
 struct Piso {
@@ -45,7 +45,7 @@ struct Report {
     std::string habiA;
     std::string catA;
     float preA;
-}
+};
 
 //reporte
 extern Report factura[100];
@@ -65,7 +65,6 @@ extern int TotalUsuarios;
 //mantenimiento 
 extern int nCategorias;
 extern std::string CAT[20];
-extern float PRECIO[20];
 extern int nPisos;
 extern std::string CATEGORIA[20];
 extern float PRECIO[20];
