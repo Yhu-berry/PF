@@ -89,13 +89,13 @@
             "dependsOn": "create build directory"
         },
         {
-            "label": "compile globals",
+            "label": "compile estructura",
             "type": "shell",
             "command": "g++",
             "args": [
                 "-I", "include",
-                "-c", "src/globals.cpp",
-                "-o", "build/globals.o"
+                "-c", "src/estructura.cpp",
+                "-o", "build/estructura.o"
             ],
             "group": "build",
             "dependsOrder": "sequence",
@@ -112,7 +112,7 @@
                 "build/mantenimiento.o",
                 "build/panel.o",
                 "build/reportes.o",
-                "build/globals.o",
+                "build/estructura.o",
                 "-o",
                 "Hotel.exe"
             ],
@@ -128,7 +128,7 @@
                 "compile mantenimiento",
                 "compile panel",
                 "compile reportes",
-                "compile globals"
+                "compile estructura"
             ]
         }
     ]
