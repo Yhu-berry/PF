@@ -59,8 +59,8 @@ void verHistorial(){
             
             // Se mostrara la información del piso
             for (int j = 0; j < nPisos; ++j) {
-                if (PISO[j].NroHabitacion[j] == usuarios[i].num_Habitacion) {
-                    cout << " - Categoría del piso: " << pisos[j].categoriasHabitaciones[j] << endl;
+                if (PISO[j].NroHabitaciones[j] == usuarios[i].num_Habitacion) {
+                    cout << " - Categoria del piso: " << PISO[j].categoriasHabitaciones[j] << endl;
                     break;
                 }
             }
@@ -107,7 +107,7 @@ void completarPago(){
             } else {
                 factura[i].totalPagar -= montoPago;
                 cout << "------------------------------------------------------" << endl;
-                cout << "Pago completado. La nueva deuda del usuario " << factura[i].nombre << " es: $" << usuarios[i].deuda << endl;
+                cout << "Pago completado. La nueva deuda del usuario " << factura[i].nombre << " es: $" << usuarios[i].deuda<< endl;
             }
             break;
         }

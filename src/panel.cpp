@@ -2,6 +2,7 @@
 
 #include "panel.h"
 #include "estructura.h"
+#include "gestion.h" // Para poder usar la funcion seleccionarHabitacion
 #include <iostream>
 #include <string>
 
