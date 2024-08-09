@@ -5,6 +5,7 @@
 #include "mantenimiento.h"
 #include "cafeteria.h"
 #include "reportes.h"
+#include "estructura.h"
 #include <iostream>
 #include <string>
 
@@ -49,8 +50,7 @@ void mostrarInicio(){
         cout << " 5. Reportes" << endl;
         cout << " 0. Salir" << endl;
         cout << "======================================================" << endl;
-        cout << "Seleccione una opcion: " << endl;
-
+        cout << "Seleccione una opcion:\t";
         cin >> opcion;
         switch (opcion){
             case 1:
