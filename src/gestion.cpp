@@ -53,7 +53,7 @@ void visualizarCategorias(){
 //Codigo de las funciones 
 //Ya no se va usar punteros o varibles por referencias ya que existe etructura que contiene todo
 
-void registar_usuario(){
+void registrar_usuario(){
     ingresarDatos_usuario();
 }
 
@@ -118,19 +118,31 @@ void seleccionarHabitacion(int piso){
 }
 
 
-//Reservar habitacione
+//Reservar habitaciones
+//buscar_usuarioPorDNI ya no devuelve un valor 
 void reservarHabitacion(){
     system("cls");
     cout<<"Ingrese su DNI: ";
     cin>>dni;
-    //se cambio el nombre de la variable, se prefirio usar una variable local de esta funcion en ve de un puntero
-    int usuarioEncontrado = buscar_usuarioPorDNI();
+    
+    buscar_usuarioPorDNI();
+
+    int usuarioEncontrado;
+    //Verificar si tiene o no una habitacion
+    if(usuarioEncontrado==-1){
+        for(int i=0;i<TotalUsuarios;i++){
+            if(usuarios[i].DNI==dni){
+                usuarioEncontrado=i;
+                break;
+            }
+        }
+    }
 
     if(usuarioEncontrado==-1){
         cout<<"Usuario no encontrado"<<endl;
-        //
         return;
     }
+
     //si el usuario es diferente a menos uno significa que ya se recorrio en otra instancia ese arreglo
     //El numero de habitacion ya ha sido reservado             
     if(usuarios[usuarioEncontrado].num_Habitacion !=-1){
@@ -140,6 +152,6 @@ void reservarHabitacion(){
 //mantenimiento para saber los precios (lo muestra de manera superficial mejorar eso)
 visualizarCategorias();
 //funcion de panel.h
-mostrarPanel();
+verPanel();
 
 }
