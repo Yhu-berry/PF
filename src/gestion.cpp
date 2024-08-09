@@ -75,26 +75,28 @@ void ingresarDatos_usuario(){
 }
 
 
-//Buscar al usuario por el DNI
-int buscar_usuarioPorDNI(){
+//Buscar al usuario por el DNI, pero no va a retornar unn valor por tanto se ha de usar  void
+ void buscar_usuarioPorDNI(){
     for(int i=0; i<TotalUsuarios;i++){
         if(usuarios[i].DNI==dni){
-            //
-            return i;
+            //Usuario encontrado
+            cout<<"Usuario encontrado en la posicionn "<<i<<endl;
+            return;
         }
     }
-    //por el momento no se ha recorrido el registro posicion -1
-    return -1;
+    //No es necesario que retorne algo ya que es unna funcion void
+    cout<<"Usuario no encontrado\n";
 }
 
 
 void seleccionarHabitacion(int piso){
     //Se elimino la validacion del piso ya que esta en panel.cpp
 
-    cout<<"Habitaciones disponibles en el piso"<< piso <<":\n"
-    for(int j=0;j<PISO[piso-1].nHabitaciones;j++){
+    cout<<"Habitaciones disponibles en el piso"<< piso <<":\n";
+
+    for(int j=0;j <PISO[piso-1].nHabitaciones;j++){
         //si dentr esta el 0 es por ue esta desocupada
-        if(ocupadas[piso-1][j]==0){
+        if(ocupados[piso-1][j]==0){
             cout<<"Habitacion"<< (j+1)<< "";
         }
     }
@@ -136,7 +138,7 @@ void reservarHabitacion(){
         return;
     } 
 //mantenimiento para saber los precios (lo muestra de manera superficial mejorar eso)
-visualizarCategorias()
+visualizarCategorias();
 //funcion de panel.h
 mostrarPanel();
 
